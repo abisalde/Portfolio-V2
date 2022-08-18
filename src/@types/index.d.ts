@@ -1,9 +1,8 @@
-declare module 'gatsby-plugin-dark-mode' {
-	interface ThemeTogglerProps {
-		onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-		theme: string;
-		label: string;
-	}
-	const ThemeToggler: React.FC<ThemeTogglerProps>;
-	export const ThemeToggler;
+declare module "gatsby-plugin-dark-mode" {
+  type themeType = "light" | "dark";
+  interface ThemeTogglerProps {
+    children: (props: { theme: themeType; toggleTheme: (theme: string) => themeType }) => React.ReactNode;
+  }
+  const ThemeToggler: React.FC<ThemeTogglerProps>;
+  export const ThemeToggler;
 }

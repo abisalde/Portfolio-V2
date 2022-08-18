@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+@layer {
+  @font-face {
+    font-family: "Rubik Dirt Display";
+    font-style: normal;
+    font-weight: 100 900;
+    src: local("Rubik Dirt Display"), url("../assets/fonts/RubikDirt-Regular.ttf") format("truetype");
+  }
+
+  body.dark {
+    --color-primary: #0ce5b5;
+    --color-secondary: #67c2e2;
+    --color-tertiary: #13152c;
+    --color-background: #13142b;
+    --color-text-main: #eaeaea;
+    --color-text-secondary: #6b7280;
+  }
+
+  body.light {
+    --color-primary: #0ce5b5;
+    --color-secondary: #67c2e2;
+    --color-tertiary: #13152c;
+    --color-background: #efedf9;
+    --color-text-main: #101010;
+    --color-text-secondary: #6b7280;
+  }
+
+  body {
+    color: var(--color-text-main);
+    background-color: var(--color-background);
+    scroll-behavior: smooth;
+  }
+}

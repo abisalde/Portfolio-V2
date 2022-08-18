@@ -1,38 +1,39 @@
-import type {GatsbyConfig} from 'gatsby';
+import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
-	siteMetadata: {
-		title: `Abisalde Portfolio`,
-		siteUrl: `https://www.yourdomain.tld`,
-		author: `Isaiah Abiodun`,
-		twitterUsername: '@abisalde',
-		image: './src/assets/images/graphql.png',
-	},
-	// More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-	// If you use VSCode you can also use the GraphQL plugin
-	// Learn more at: https://gatsby.dev/graphql-typegen
-	graphqlTypegen: true,
-	plugins: [
-		'gatsby-plugin-postcss',
-		'gatsby-plugin-dark-mode',
-		'gatsby-plugin-image',
-		{
-			resolve: 'gatsby-plugin-manifest',
-			options: {
-				icon: 'src/images/icon.png',
-			},
-		},
-		'gatsby-plugin-sharp',
-		'gatsby-transformer-sharp',
-		{
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				name: 'images',
-				path: './src/images/',
-			},
-			__key: 'images',
-		},
-	],
+  siteMetadata: {
+    title: "Abisalde Portfolio",
+    siteUrl: "https://www.yourdomain.tld",
+    author: "Isaiah Abiodun",
+    twitterUsername: "@abisalde",
+    image: "./src/assets/images/graphql.png",
+  },
+  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
+  // If you use VSCode you can also use the GraphQL plugin
+  // Learn more at: https://gatsby.dev/graphql-typegen
+  graphqlTypegen: true,
+  plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-dark-mode",
+    "gatsby-plugin-fontawesome-css",
+    "gatsby-plugin-image",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon.png",
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+  ],
 };
 
 export default config;
