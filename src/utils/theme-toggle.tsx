@@ -17,7 +17,7 @@ const ToggleButtonTheme: React.FC = () => {
             aria-label="Toggle Theme"
             onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
           >
-            {theme === "dark" ? <BsMoon /> : <FiSun />}
+            {theme === "dark" ? <BsMoon fontSize={20} /> : <FiSun fontSize={20} />}
           </Button>
         </Tooltip>
       )}

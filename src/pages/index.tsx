@@ -4,7 +4,7 @@ import type { HeadFC } from "gatsby";
 //
 
 import { Button, Tooltip } from "flowbite-react";
-import { Layout } from "@portfolio-components/Layout";
+import { Layout } from "@portfolio-components/layout";
 
 const IndexPage: React.FC = () => {
   return (

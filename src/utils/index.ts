@@ -1,2 +1,2 @@
-export { default as ToggleButtonTheme } from "./themeToggle";
-export { NavLinks, NavLinkType } from "./nav-links";
+export { default as ToggleButtonTheme } from "./theme-toggle";
+export { NavLinks } from "./nav-links";
