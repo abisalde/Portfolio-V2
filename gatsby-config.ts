@@ -14,8 +14,8 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-postcss",
+    "gatsby-plugin-tsconfig-paths",
     "gatsby-plugin-dark-mode",
-    "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-manifest",

@@ -12,6 +12,26 @@
     src: local("Rubik Dirt Display"), url("../assets/fonts/RubikDirt-Regular.ttf") format("truetype");
   }
 
+  :root {
+    --app-height: 100%;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  .app {
+    height: 100vh;
+    height: var(--app-height);
+    backface-visibility: hidden;
+  }
+
   body.dark {
     --color-primary: #0ce5b5;
     --color-secondary: #67c2e2;
@@ -25,7 +45,7 @@
     --color-primary: #0ce5b5;
     --color-secondary: #67c2e2;
     --color-tertiary: #13152c;
-    --color-background: #efedf9;
+    --color-background: #fcfcfe;
     --color-text-main: #101010;
     --color-text-secondary: #6b7280;
   }
@@ -34,5 +54,6 @@
     color: var(--color-text-main);
     background-color: var(--color-background);
     scroll-behavior: smooth;
+    margin: 0;
   }
 }

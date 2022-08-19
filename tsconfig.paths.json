@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@portfolio-components/*": ["./shared/components/*"],
+      "@utils": ["./utils/"],
+      "@assets": ["./assets/"]
+    }
+  }
+}
