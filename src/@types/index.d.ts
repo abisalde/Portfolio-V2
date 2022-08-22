@@ -6,3 +6,8 @@ declare module "gatsby-plugin-dark-mode" {
   const ThemeToggler: React.FC<ThemeTogglerProps>;
   export const ThemeToggler;
 }
+
+declare module "gatsby-plugin-transition-link" {
+  export { TransitionHandler, TransitionState, TransitionPortal, TransitionObserver, useTriggerTransition };
+  export default TransitionLink;
+}

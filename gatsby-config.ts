@@ -17,6 +17,7 @@ const config: GatsbyConfig = {
     "gatsby-plugin-tsconfig-paths",
     "gatsby-plugin-dark-mode",
     "gatsby-plugin-image",
+    "gatsby-plugin-transition-link",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
