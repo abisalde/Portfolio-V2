@@ -1,34 +1,44 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 
 /**
  * ? Local Imports
  */
+import "@styles/index.css";
 import { ToggleButtonTheme } from "@utils";
-import { useWindowSize } from "@hooks";
-import { Header, LinkType } from "@portfolio-components/header";
+import { BackgroundImage } from "@portfolio-components/background-image";
 
 interface ILayoutProps {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<ILayoutProps> = ({ children }) => {
-  const windowSize = useWindowSize();
+  const HEIGHT = window.innerHeight;
+  const DOC = document.documentElement;
+
+  useEffect(() => {
+    heightUpdate();
+    window.addEventListener("resize", heightUpdate);
+    return () => {
+      window.removeEventListener("resize", heightUpdate);
+    };
+  }, []);
+
+  const heightUpdate = useCallback(() => {
+    DOC.style.setProperty("--app-height", `${HEIGHT}px`);
+  }, [HEIGHT]);
 
   return (
     <div
-      className="flex flex-col bg-no-repeat bg-cover overflow-hidden transition-all duration-300 h-screen w-screen"
+      className="flex flex-col transition-all overflow-hidden relative"
       style={{
         height: "var(--app-height)",
-        width: windowSize.width,
       }}
     >
-      <Header view={LinkType.Home} />
+      <BackgroundImage />
+      <div className="px-2 m-0 relative">
+        <ToggleButtonTheme />
+      </div>
       <div className="container mx-auto">
-        <header className="grid">
-          <div className="flex flex-col py-2">
-            <ToggleButtonTheme />
-          </div>
-        </header>
         <main>{children}</main>
       </div>
     </div>

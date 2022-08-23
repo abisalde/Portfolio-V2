@@ -4,8 +4,9 @@
     "paths": {
       "@portfolio-components/*": ["./shared/components/*"],
       "@utils": ["./utils/"],
-      "@assets": ["./assets/"],
-      "@hooks": ["./hooks/"]
+      "@assets/*": ["./assets/*"],
+      "@hooks": ["./hooks/"],
+      "@styles/*": ["./styles/*"]
     }
   }
 }

@@ -26,5 +26,3 @@ const ToggleButtonTheme: React.FC = () => {
 };
 
 export default ToggleButtonTheme;
-
-// {theme === "dark" ? "🌙" : "☀️"}
