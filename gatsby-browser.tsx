@@ -6,6 +6,7 @@ import type { GatsbyBrowser } from "gatsby";
  */
 import "./src/styles/index.css";
 import "./src/styles/global.css";
+import "./src/styles/colors.css";
 
 import { Layout } from "./src/shared/components/layout";
 

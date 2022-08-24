@@ -8,6 +8,22 @@ declare module "gatsby-plugin-dark-mode" {
 }
 
 declare module "gatsby-plugin-transition-link" {
+  type EEType = {
+    state?: any;
+    delay?: number;
+    length?: number;
+  };
+
+  type TransitionStatePropTypes = {
+    transitionStatus?: string;
+    entry?: EEType | any;
+    exit?: EEType | any;
+  };
+
+  interface TransitionStateProps {
+    children: (props: TransitionStatePropTypes) => React.ReactNode;
+  }
+  const TransitionState: React.FC<TransitionStateProps>;
   export { TransitionHandler, TransitionState, TransitionPortal, TransitionObserver, useTriggerTransition };
   export default TransitionLink;
 }

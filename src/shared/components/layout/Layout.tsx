@@ -38,9 +38,8 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
       <div className="px-2 m-0 relative">
         <ToggleButtonTheme />
       </div>
-      <div className="container mx-auto">
-        <main>{children}</main>
-      </div>
+
+      <main className="container mx-auto flex flex-col justify-center">{children}</main>
     </div>
   );
 };

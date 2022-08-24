@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link";
+import { FaLinkedin, FaGithub, FaTwitterSquare } from "react-icons/fa";
+import { Tooltip } from "flowbite-react";
 
 export enum LinkType {
   Home = "index",
@@ -18,7 +20,6 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
   return (
     <TransitionState>
       {({ transitionStatus }: any) => {
-        console.log("Transition Status", transitionStatus);
         if (view !== "index") {
           return (
             <header>
@@ -32,17 +33,45 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
             <header className="">
               <div className="flex justify-end">
                 <motion.div
-                  className="flex flex-row"
+                  className="flex flex-row items-center"
                   initial={{ x: 500 }}
                   animate={transitionStatus === "exiting" ? { x: 500 } : { x: 0 }}
                   transition={{ duration: 1.5 }}
                 >
-                  <a href="#" target="_blank" rel="noreferrer" aria-label="Social Links" className="self-end">
-                    <h1 className="m-0 text-purple-900 text-4xl font-bold">We Go</h1>
+                  <a
+                    href="https://linkedin.com/in/abisalde"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn Profile"
+                    className="px-2 shadow-lg"
+                  >
+                    <Tooltip content="LinkedIn Profile">
+                      <FaLinkedin fontSize={28} color={"#101010"} />
+                    </Tooltip>
                   </a>
 
-                  <a href="#" target="_blank" rel="noreferrer" aria-label="Social Links" className="self-end">
-                    <h1 className="m-0 text-primary text-4xl font-bold">Loud Go</h1>
+                  <a
+                    href="https://github.com/abisalde"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="GitHub Profile"
+                    className="px-2 shadow-lg"
+                  >
+                    <Tooltip content="GitHub Profile">
+                      <FaGithub fontSize={28} color={"#101010"} />
+                    </Tooltip>
+                  </a>
+
+                  <a
+                    href="https://twitter.com/abisalde"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Twitter Profile"
+                    className="px-2 shadow-lg"
+                  >
+                    <Tooltip content="Twitter Profile">
+                      <FaTwitterSquare fontSize={28} color={"#101010"} />
+                    </Tooltip>
                   </a>
                 </motion.div>
               </div>
