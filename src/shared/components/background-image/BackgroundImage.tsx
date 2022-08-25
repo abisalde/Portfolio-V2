@@ -20,13 +20,18 @@ const BackgroundImage: React.FC = () => {
     type: "spring",
     damping: 10,
     stiffness: 100,
+    duration: 3,
   };
 
   return (
-    <motion.div transition={spring} translate="yes">
+    <motion.div
+      transition={spring}
+      translate="yes"
+      className="transform scale-100 -z-10 h-full w-full absolute bg-cover bg-no-repeat"
+    >
       <GatsbyImage
         aria-describedby="background-banner"
-        className={"absolute h-full w-full transform scale-100"}
+        className={"absolute h-full w-full transform scale-100 bg-cover"}
         alt={"banner-image"}
         image={image}
         loading="eager"

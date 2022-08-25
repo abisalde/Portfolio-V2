@@ -29,7 +29,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
 
   return (
     <div
-      className="flex flex-col transition-all overflow-hidden relative"
+      className="flex flex-1 visible flex-col transition-all overflow-hidden relative bg-cover bg-no-repeat select-none"
       style={{
         height: "var(--app-height)",
       }}
@@ -39,7 +39,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
         <ToggleButtonTheme />
       </div>
 
-      <main className="container mx-auto flex flex-col justify-center">{children}</main>
+      <main>{children}</main>
     </div>
   );
 };

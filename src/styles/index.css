@@ -5,3 +5,14 @@
 html {
   height: 100%;
 }
+
+main > div.tl-edges {
+  overflow: hidden;
+  backface-visibility: visible;
+  height: calc(var(--app-height) - 100px);
+}
+
+div.tl-wrapper.tl-wrapper--mount {
+  min-height: auto;
+  height: calc(var(--app-height) - 100px);
+}

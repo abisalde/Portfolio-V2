@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link";
-import { FaLinkedin, FaGithub, FaTwitterSquare } from "react-icons/fa";
-import { Tooltip } from "flowbite-react";
+import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import { Button, Tooltip } from "flowbite-react";
 
 export enum LinkType {
   Home = "index",
@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
           );
         } else {
           return (
-            <header className="">
+            <header className="grid grid-flow-col w-full">
               <div className="flex justify-end">
                 <motion.div
                   className="flex flex-row items-center"
@@ -46,7 +46,9 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
                     className="px-2 shadow-lg"
                   >
                     <Tooltip content="LinkedIn Profile">
-                      <FaLinkedin fontSize={28} color={"#101010"} />
+                      <Button gradientDuoTone={"greenToBlue"}>
+                        <FaLinkedinIn fontSize={20} />
+                      </Button>
                     </Tooltip>
                   </a>
 
@@ -58,7 +60,9 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
                     className="px-2 shadow-lg"
                   >
                     <Tooltip content="GitHub Profile">
-                      <FaGithub fontSize={28} color={"#101010"} />
+                      <Button gradientDuoTone={"greenToBlue"}>
+                        <FaGithub fontSize={20} />
+                      </Button>
                     </Tooltip>
                   </a>
 
@@ -70,7 +74,9 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
                     className="px-2 shadow-lg"
                   >
                     <Tooltip content="Twitter Profile">
-                      <FaTwitterSquare fontSize={28} color={"#101010"} />
+                      <Button gradientDuoTone={"greenToBlue"}>
+                        <FaTwitter fontSize={20} />
+                      </Button>
                     </Tooltip>
                   </a>
                 </motion.div>

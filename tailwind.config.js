@@ -17,13 +17,19 @@ module.exports = {
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      xs: "10px",
+      sm: "765px",
+      md: "960px",
+      lg: "1440px",
+    },
     container: {
       padding: {
         DEFAULT: "1rem",
         sm: "1.5rem",
         lg: "2rem",
-        xl: "3.5rem",
-        "2xl": "4rem",
+        xl: "3rem",
+        "2xl": "3.5rem",
       },
     },
     extend: {
