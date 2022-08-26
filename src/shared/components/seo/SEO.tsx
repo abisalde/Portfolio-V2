@@ -25,8 +25,8 @@ const SEO: React.FC<SEOProps> = ({ children, description, pathname, title }) => 
     `,
   );
 
-  const metaDescription = site.siteMetadata.description || description;
-  const siteTitle = site.siteMetadata.title || title;
+  const metaDescription = description || site.siteMetadata.description;
+  const siteTitle = title || site.siteMetadata.title;
   const siteUrl = site.siteMetadata.siteUrl;
   const twitterUsername = site.siteMetadata.twitterUsername;
 

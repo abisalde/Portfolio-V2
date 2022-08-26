@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
 
 :root {
   /* #region  /**=========== Primary Color =========== */
@@ -57,7 +58,7 @@
     --color-primary: #0ce5b5;
     --color-secondary: #67c2e2;
     --color-tertiary: #13152c;
-    --color-background: #fcfcfe;
+    --color-background: #fcfdfe;
     --color-text-main: #101010;
     --color-text-secondary: #6b7280;
   }

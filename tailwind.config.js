@@ -55,6 +55,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["'Lato'", "sans-serif"],
+        sans2: ["'Titillium Web'", "sans-serif"],
         display: ["'Rubik Dirt Display'", "cursive"],
       },
       fontSize: {

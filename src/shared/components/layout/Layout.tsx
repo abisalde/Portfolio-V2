@@ -5,7 +5,7 @@ import React, { useCallback, useEffect } from "react";
  */
 import "@styles/index.css";
 import { ToggleButtonTheme } from "@utils";
-import { BackgroundImage } from "@portfolio-components/background-image";
+import { ImageComponent, Images } from "@portfolio-components/images";
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -34,11 +34,13 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
         height: "var(--app-height)",
       }}
     >
-      <BackgroundImage />
-      <div className="px-2 m-0 relative">
+      <ImageComponent type={Images.bg} />
+      <div className="px-2 py-3 m-auto relative">
         <ToggleButtonTheme />
       </div>
-
+      <div className="absolute z-5 left-0 flex sm:hidden xs:flex bg-red-700 h-full justify-start items-center">
+        Live
+      </div>
       <main>{children}</main>
     </div>
   );
