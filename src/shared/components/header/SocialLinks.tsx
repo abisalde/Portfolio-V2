@@ -49,7 +49,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ transitionStatus }) => {
           target="_blank"
           rel="noreferrer"
           aria-label="Twitter Profile"
-          className="px-2"
+          className="pl-2"
         >
           <Tooltip content="Twitter Profile">
             <Button gradientDuoTone={"greenToBlue"}>

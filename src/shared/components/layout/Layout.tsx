@@ -35,7 +35,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
       }}
     >
       <ImageComponent type={Images.bg} />
-      <div className="px-2 py-3 m-auto relative">
+      <div className="px-2 py-1 m-auto relative">
         <ToggleButtonTheme />
       </div>
       <div className="absolute z-5 left-0 flex sm:hidden xs:flex bg-red-700 h-full justify-start items-center">

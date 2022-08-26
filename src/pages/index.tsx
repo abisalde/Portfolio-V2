@@ -182,7 +182,7 @@ const IndexPage: React.FC = (props) => {
                       initial={{ y: 10 }}
                       animate={transitionStatus === "exiting" ? { y: -10 } : { y: 0 }}
                       transition={{
-                        y: { duration: 1, yoyo: Infinity, ease: "easeOut" },
+                        y: { duration: 1, repeat: Infinity, ease: "easeOut", repeatType: "reverse" },
                       }}
                     >
                       <ImageComponent type={Images.home} />
@@ -198,7 +198,7 @@ const IndexPage: React.FC = (props) => {
                     initial={{ y: 10 }}
                     animate={transitionStatus === "exiting" ? { y: -10 } : { y: 0 }}
                     transition={{
-                      y: { duration: 1, yoyo: Infinity, ease: "easeOut" },
+                      y: { duration: 1, repeat: Infinity, repeatType: "reverse", ease: "easeIn" },
                     }}
                   >
                     <ImageComponent type={Images.home} />
