@@ -173,7 +173,7 @@ const IndexPage: React.FC = (props) => {
                       </motion.li>
                     </ul>
                   </nav>
-                  <div className="xs:block sm:hidden flex-col justify-center items-center row-start-3 row-end-7 col-start-2 col-span-12">
+                  <div className="xs:block sm:hidden flex justify-center items-center row-start-3 row-end-7 col-start-3 col-span-11">
                     <motion.div
                       className="shadow-lg border-2 border-slate-400 w-full h-4/6 flex justify-center items-center dark:shadow-md dark:shadow-white"
                       style={{

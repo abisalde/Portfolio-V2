@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
     title: "Abisalde | Portfolio",
     siteUrl: "https://abisalde.tech",
     description:
-      "I am Software Engineer with over 5+ years of industrial experience building scalable, readable, maintainable pixel perfect UI/'s both as a mobile and web applications targeting consumer experience with adequate metrics",
+      "I am Software Engineer with over 4+ years of industrial experience building scalable, readable, maintainable pixel perfect UI/'s both as a mobile and web applications targeting consumer experience with adequate metrics",
     author: "Isaiah Abiodun",
     twitterUsername: "@abisalde",
     image: "./src/assets/images/graphql.png",
