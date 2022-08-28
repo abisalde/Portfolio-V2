@@ -13,7 +13,7 @@ module.exports = {
   darkMode: "class",
   content: [
     "./src/pages/**/*.{js,jsx,ts,tsx}",
-    "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./src/shared/components/**/*.{js,jsx,ts,tsx}",
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {

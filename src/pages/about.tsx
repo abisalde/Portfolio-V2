@@ -14,6 +14,7 @@ const About: React.FC = (props) => {
     <>
       <Header view={LinkType.About} />
       <div>About</div>
+      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-12 w-12">145</div>
     </>
   );
 };
