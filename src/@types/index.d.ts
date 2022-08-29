@@ -27,3 +27,5 @@ declare module "gatsby-plugin-transition-link" {
   export { TransitionHandler, TransitionState, TransitionPortal, TransitionObserver, useTriggerTransition };
   export default TransitionLink;
 }
+
+declare module "gatsby-plugin-transition-link/AniLink";

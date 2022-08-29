@@ -1,3 +1,6 @@
+import clsx, { ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 type OpenGraphType = {
   title: string;
   description: string;
@@ -10,4 +13,9 @@ export const openGraph = ({ title, description, logo = "" }: OpenGraphType): str
   const ogDesc = encodeURIComponent(description.trim());
 
   return `${ogLogo} + ${ogSiteName} + ${ogDesc} `;
+};
+
+/** Merge classes with tailwind-merge with clsx full feature */
+export const clsMerge = (...classes: ClassValue[]): string => {
+  return twMerge(clsx(...classes));
 };

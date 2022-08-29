@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 /**
  * ? Local Imports
  */
 import "@styles/index.css";
 import { ImageComponent, Images } from "@portfolio-components/images";
+import { MobileMenu } from "@portfolio-components/mobile-menu";
 import { ToggleButtonTheme } from "@utils";
 
 interface ILayoutProps {
@@ -27,6 +28,8 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
     DOC.style.setProperty("--app-height", `${HEIGHT}px`);
   }, [HEIGHT]);
 
+  const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
+
   return (
     <div
       className="flex flex-1 visible flex-col transition-all overflow-hidden relative bg-cover bg-no-repeat select-none"
@@ -35,9 +38,10 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
       }}
     >
       <ImageComponent type={Images.bg} />
-      <div className="px-2 py-1 relative">
+      <div className="px-2 py-1 relative z-20">
         <ToggleButtonTheme />
       </div>
+      <MobileMenu openMobileMenu={openMobileMenu} setOpenMobileMenu={setOpenMobileMenu} />
       <main>{children}</main>
     </div>
   );

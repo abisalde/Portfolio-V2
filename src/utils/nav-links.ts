@@ -1,4 +1,3 @@
-import { IconType } from "react-icons";
 import { GoHome, GoPerson } from "react-icons/go";
 import { GrUserSettings, GrContact } from "react-icons/gr";
 import { FaProjectDiagram } from "react-icons/fa";
@@ -9,9 +8,9 @@ export type NavLinkType = {
   path: string;
   id?: string;
   entry?: object;
-  Icon?: IconType;
+  Icon?: any;
   iconClassName?: string;
-  className?: string;
+  className?: string[];
 };
 
 export const NavLinks: NavLinkType[] = [
@@ -28,7 +27,7 @@ export const NavLinks: NavLinkType[] = [
         fromPage: true,
       },
     },
-    className: "col-start-6 col-span-4 row-start-1 row-end-1 flex justify-center items-end",
+    className: ["col-start-6 col-span-4 row-start-1 row-end-1 flex flex-col justify-center items-center"],
     Icon: GoHome,
   },
   {
@@ -45,7 +44,7 @@ export const NavLinks: NavLinkType[] = [
       },
       appearAfter: 1.5,
     },
-    className: "col-start-5 col-span-3 row-start-2 row-end-2 flex justify-center items-end",
+    className: ["col-start-5 col-span-3 row-start-2 row-end-2 flex flex-col justify-center items-center"],
     Icon: GoPerson,
   },
   {
@@ -62,7 +61,7 @@ export const NavLinks: NavLinkType[] = [
       },
       appearAfter: 1,
     },
-    className: "col-start-3 col-span-4 row-start-3 row-end-3 flex justify-center items-end",
+    className: ["col-start-3 col-span-4 row-start-3 row-end-3 flex flex-col justify-center items-center"],
     Icon: GrUserSettings,
   },
   {
@@ -78,7 +77,7 @@ export const NavLinks: NavLinkType[] = [
         fromPage: true,
       },
     },
-    className: "col-start-2 col-span-4 row-start-4 row-end-4 justify-center flex items-end",
+    className: ["col-start-2 col-span-4 row-start-4 row-end-4 justify-center flex flex-col items-center"],
     Icon: FaProjectDiagram,
   },
   {
@@ -95,7 +94,7 @@ export const NavLinks: NavLinkType[] = [
       },
       appearAfter: 1.5,
     },
-    className: "col-start-1 col-span-3 row-start-5 row-end-5 justify-center flex items-center flex-col",
+    className: ["col-start-1 col-span-3 row-start-5 row-end-5 justify-center flex items-center flex-col"],
     Icon: GrContact,
   },
 ];
