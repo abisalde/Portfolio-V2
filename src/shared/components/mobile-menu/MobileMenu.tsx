@@ -7,7 +7,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
  * ? Local Imports
  */
 import { NavLinks } from "@utils";
-import TransitionLink from "gatsby-plugin-transition-link";
+import { clsMerge } from "@helpers";
 
 interface MobileMenuProps {
   openMobileMenu: boolean;
@@ -21,7 +21,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ openMobileMenu, setOpenMobileMe
 
   return (
     <>
-      <div className="grid grid-cols-12 grid-rows-6 place-items-stretch absolute z-10 h-full w-full sm:hidden backdrop-blur-sm bg-white/30 backdrop-saturate-500">
+      <div
+        className={clsMerge(
+          "grid grid-cols-12 grid-rows-6 place-items-stretch absolute h-full w-full sm:hidden z-10",
+          openMobileMenu && ["backdrop-blur-sm bg-white/30 backdrop-saturate-500"],
+        )}
+      >
         <motion.div
           initial={{ y: -10 }}
           animate={{ y: 10 }}
@@ -35,28 +40,65 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ openMobileMenu, setOpenMobileMe
         >
           <motion.button
             onClick={handleClick}
-            className="rounded-full w-14 h-14 bg-gradient-to-tr from-primary-500 via-purple-400 to-primary-main flex justify-center items-center"
+            data-test="NavLinks"
+            className="rounded-full w-12 h-12 bg-gradient-to-tr from-primary-500 via-purple-400 to-primary-main flex justify-center items-center"
+            whileTap={{ rotate: 90, scale: 1.1 }}
           >
-            {openMobileMenu ? <RiCloseLine fontSize={30} /> : <RiMenu4Line fontSize={30} />}
+            {openMobileMenu ? <RiCloseLine fontSize={28} /> : <RiMenu4Line fontSize={28} />}
           </motion.button>
         </motion.div>
-        {typeof window !== "undefined" &&
-          NavLinks?.map((links) => {
-            const { Icon, className, urlPath, id, name, entry } = links;
-            return (
-              <TransitionLink entry={entry} to={urlPath} className={className} key={id}>
+        {NavLinks?.map((links) => {
+          const { Icon, className, urlPath, id, name, color } = links;
+          return (
+            <AniLink
+              className={clsMerge(openMobileMenu && [className], openMobileMenu ? "flex flex-col" : "hidden", [
+                name === "Home" && ["col-start-6"],
+                name === "About" && ["col-start-5"],
+                name === "Skills" && ["col-start-3"],
+                name === "Projects" && ["col-start-2"],
+                name === "Contact" && ["col-start-1"],
+              ])}
+              key={id}
+              paintDrip
+              hex={color}
+              to={urlPath}
+              data-test="links"
+              onClick={(): void => setOpenMobileMenu(false)}
+            >
+              <motion.div
+                initial={{ x: -7 }}
+                animate={{ x: 7 }}
+                transition={{
+                  ease: "easeInOut",
+                  duration: 5,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              >
                 <div className="rounded-full flex justify-center items-center m-1 bg-gradient-to-r from-primary-400 via-purple-500 to-primary-main w-12 h-12">
                   <Icon fontSize={19} color="#101010" />
                 </div>
                 <div>
-                  <p className="text-sans2 text-base font-semibold">{name}</p>
+                  <p className="text-sans2 text-base font-semibold bg-clip-text bg-gradient-to-tl dark:text-amber-400">
+                    {name}
+                  </p>
                 </div>
-              </TransitionLink>
-            );
-          })}
+              </motion.div>
+            </AniLink>
+          );
+        })}
       </div>
     </>
   );
 };
 
 export default MobileMenu;
+
+{
+  /* <div className="col-start-1 col-span-3 row-start-5 row-end-5 justify-center flex items-center flex-col h-full w-full">
+          Contact
+        </div>
+        <div className="col-start-2 col-span-4 row-start-4 row-end-4 justify-center flex flex-col items-center h-full w-full">
+          Projects
+        </div> */
+}

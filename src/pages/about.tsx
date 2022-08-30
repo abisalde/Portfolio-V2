@@ -13,8 +13,10 @@ const About: React.FC = (props) => {
   return (
     <>
       <Header view={LinkType.About} />
-      <div>About</div>
-      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-12 w-12">145</div>
+      <div className="flex sm:flex-row xs:flex-col flex-nowrap justify-between w-full h-full mx-auto xs: sm:p-10">
+        <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-12 w-12 sm:w-3/4">145</div>
+        <div className="sm:w-1/4 xs:hidden">Test</div>
+      </div>
     </>
   );
 };

@@ -10,7 +10,8 @@ export type NavLinkType = {
   entry?: object;
   Icon?: any;
   iconClassName?: string;
-  className?: string[];
+  className?: string;
+  color?: string;
 };
 
 export const NavLinks: NavLinkType[] = [
@@ -27,7 +28,8 @@ export const NavLinks: NavLinkType[] = [
         fromPage: true,
       },
     },
-    className: ["col-start-6 col-span-4 row-start-1 row-end-1 flex flex-col justify-center items-center"],
+    className: "col-span-4 row-start-1 row-end-1 justify-center items-center h-full w-full",
+    color: "#0ce5b5",
     Icon: GoHome,
   },
   {
@@ -44,7 +46,8 @@ export const NavLinks: NavLinkType[] = [
       },
       appearAfter: 1.5,
     },
-    className: ["col-start-5 col-span-3 row-start-2 row-end-2 flex flex-col justify-center items-center"],
+    className: "col-span-3 row-start-2 row-end-2 justify-center items-center h-full w-full",
+    color: "#CAF3F5",
     Icon: GoPerson,
   },
   {
@@ -61,7 +64,8 @@ export const NavLinks: NavLinkType[] = [
       },
       appearAfter: 1,
     },
-    className: ["col-start-3 col-span-4 row-start-3 row-end-3 flex flex-col justify-center items-center"],
+    className: "col-span-4 row-start-3 row-end-3 justify-center items-center h-full w-full",
+    color: "#0ce5b5",
     Icon: GrUserSettings,
   },
   {
@@ -77,7 +81,8 @@ export const NavLinks: NavLinkType[] = [
         fromPage: true,
       },
     },
-    className: ["col-start-2 col-span-4 row-start-4 row-end-4 justify-center flex flex-col items-center"],
+    className: "col-span-4 row-start-4 row-end-4 justify-center items-center h-full w-full",
+    color: "#CAF3F5",
     Icon: FaProjectDiagram,
   },
   {
@@ -94,7 +99,8 @@ export const NavLinks: NavLinkType[] = [
       },
       appearAfter: 1.5,
     },
-    className: ["col-start-1 col-span-3 row-start-5 row-end-5 justify-center flex items-center flex-col"],
+    className: "col-span-3 row-start-5 row-end-5 justify-center items-center h-full w-full",
+    color: "#67c2e2",
     Icon: GrContact,
   },
 ];

@@ -49,7 +49,7 @@ const SEO: React.FC<SEOProps> = ({ children, description, pathname, title }) => 
       <meta name="twitter:title" content={siteTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content="" />
-      <meta name="theme-color" content="#E5FA9F" />
+      <meta name="theme-color" content="#FEFBEA" />
       <meta name="msapplication-TileColor" content="#ffffff" />
       {children}
     </>

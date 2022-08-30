@@ -20,10 +20,18 @@ const config: GatsbyConfig = {
     "gatsby-plugin-dark-mode",
     "gatsby-plugin-image",
     "gatsby-plugin-transition-link",
+    "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/icon.png",
+        name: "Abisalde Portfolio",
+        short_name: "Abisalde",
+        start_url: "/",
+        background_color: "#13142b",
+        theme_color: "#FEFBEA",
+        display: "standalone",
+        cache_busting_mode: "none",
       },
     },
     "gatsby-plugin-sharp",
