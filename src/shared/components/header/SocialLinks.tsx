@@ -9,7 +9,7 @@ interface SocialLinksProps {
 
 const SocialLinks: React.FC<SocialLinksProps> = ({ transitionStatus }) => {
   return (
-    <div className="flex justify-end">
+    <div className="flex justify-end relative">
       <motion.div
         className="flex flex-row items-center"
         initial={{ y: -500 }}

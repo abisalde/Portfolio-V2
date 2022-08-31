@@ -13,9 +13,13 @@ const About: React.FC = (props) => {
   return (
     <>
       <Header view={LinkType.About} />
-      <div className="flex sm:flex-row xs:flex-col flex-nowrap justify-between w-full h-full mx-auto xs: sm:p-10">
-        <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-12 w-12 sm:w-3/4">145</div>
-        <div className="sm:w-1/4 xs:hidden">Test</div>
+      <div className="flex sm:flex-row xs:flex-col flex-nowrap justify-between w-full h-full mx-auto xs:p-4 sm:px-10 py-6">
+        <div className="sm:w-3/4">
+          <h2 className="font-display text-slate-700 dark:text-secondary font-bold xs:text-3xl sm:text-5xl">
+            about me
+          </h2>
+        </div>
+        <div className="sm:w-1/4 xs:hidden sm:block">Here Me</div>
       </div>
     </>
   );
