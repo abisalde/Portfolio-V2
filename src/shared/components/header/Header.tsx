@@ -5,7 +5,7 @@ import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link";
 /**
  * ? Local Imports
  */
-import SocialLinks from "./SocialLinks";
+
 import { NavLinks } from "@utils";
 
 export enum LinkType {
@@ -52,17 +52,10 @@ const Header: React.FC<HeaderProps> = ({ view }) => {
                     </TransitionLink>
                   ))}
               </motion.div>
-              <div className="col-start-10 col-span-12 row-start-1">
-                <SocialLinks transitionStatus={transitionStatus} />
-              </div>
             </header>
           );
         } else {
-          return (
-            <header className="grid grid-flow-col w-full pr-4">
-              <SocialLinks transitionStatus={transitionStatus} />
-            </header>
-          );
+          return null;
         }
       }}
     </TransitionState>

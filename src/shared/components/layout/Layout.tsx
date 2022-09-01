@@ -7,6 +7,7 @@ import "@styles/index.css";
 import { ImageComponent, Images } from "@portfolio-components/images";
 import { MobileMenu } from "@portfolio-components/mobile-menu";
 import { ToggleButtonTheme } from "@utils";
+import SocialLinks from "@portfolio-components/header/SocialLinks";
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -38,8 +39,9 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
       }}
     >
       <ImageComponent type={Images.bg} />
-      <div className="px-2 py-1 relative z-20">
+      <div className="p-2 relative z-20 flex justify-between items-center">
         <ToggleButtonTheme />
+        <SocialLinks />
       </div>
       <MobileMenu openMobileMenu={openMobileMenu} setOpenMobileMenu={setOpenMobileMenu} />
       <main>{children}</main>

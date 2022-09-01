@@ -11,6 +11,7 @@ main > div.tl-edges {
   overflow: hidden;
   backface-visibility: visible;
   height: calc(var(--app-height) - 100px);
+  position: relative;
 }
 
 div.tl-wrapper.tl-wrapper--mount {

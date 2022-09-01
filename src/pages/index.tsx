@@ -1,5 +1,6 @@
 import * as React from "react";
 import type { HeadFC } from "gatsby";
+import lottie from "lottie-web";
 import { motion } from "framer-motion";
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link";
 import Typewriter from "typewriter-effect";
@@ -8,11 +9,26 @@ import Typewriter from "typewriter-effect";
  * ? Local Imports
  */
 import { Header, LinkType } from "@portfolio-components/header";
-import { ImageComponent, Images } from "@portfolio-components/images";
+
 import { SEO } from "@portfolio-components/seo";
+import codePerson from "@assets/lottiefiles/code-person.json";
 
 const IndexPage: React.FC = (props) => {
   const { location }: any = props;
+
+  const animationContainer = React.createRef<HTMLDivElement>();
+
+  React.useEffect(() => {
+    if (animationContainer.current) {
+      lottie.loadAnimation({
+        container: animationContainer.current as HTMLDivElement,
+        animationData: codePerson,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -174,35 +190,11 @@ const IndexPage: React.FC = (props) => {
                     </ul>
                   </nav>
                   <div className="xs:block sm:hidden flex justify-center items-center row-start-3 row-end-7 col-start-3 col-span-11">
-                    <motion.div
-                      className="shadow-lg border-2 border-slate-400 w-full h-4/6 flex justify-center items-center dark:shadow-md dark:shadow-white"
-                      style={{
-                        borderRadius: "75% 25% 32% 68% / 53% 47% 53% 57%",
-                      }}
-                      initial={{ y: 10 }}
-                      animate={transitionStatus === "exiting" ? { y: -10 } : { y: 0 }}
-                      transition={{
-                        y: { duration: 1, repeat: Infinity, ease: "easeOut", repeatType: "reverse" },
-                      }}
-                    >
-                      <ImageComponent type={Images.home} />
-                    </motion.div>
+                    <div className="w-full h-full flex justify-center items-center">Test here</div>
                   </div>
                 </div>
                 <div className="xs:hidden sm:flex flex-col justify-center items-center">
-                  <motion.div
-                    className="shadow-md border-2 border-slate-400 w-full h-5/6 flex justify-center items-center dark:shadow-md dark:shadow-white"
-                    style={{
-                      borderRadius: "75% 25% 32% 68% / 53% 47% 53% 57%",
-                    }}
-                    initial={{ y: 10 }}
-                    animate={transitionStatus === "exiting" ? { y: -10 } : { y: 0 }}
-                    transition={{
-                      y: { duration: 1, repeat: Infinity, repeatType: "reverse", ease: "easeIn" },
-                    }}
-                  >
-                    <ImageComponent type={Images.home} />
-                  </motion.div>
+                  <div ref={animationContainer} className="w-full h-5/6 flex justify-center items-center"></div>
                 </div>
               </motion.div>
             )}
@@ -216,3 +208,19 @@ const IndexPage: React.FC = (props) => {
 export default IndexPage;
 
 export const Head: HeadFC = () => <SEO pathname={"/"} />;
+
+{
+  /* <motion.div
+                      className="shadow-lg border-2 border-slate-400 w-full h-4/6 flex justify-center items-center dark:shadow-md dark:shadow-white"
+                      style={{
+                        borderRadius: "75% 25% 32% 68% / 53% 47% 53% 57%",
+                      }}
+                      initial={{ y: 10 }}
+                      animate={transitionStatus === "exiting" ? { y: -10 } : { y: 0 }}
+                      transition={{
+                        y: { duration: 1, repeat: Infinity, ease: "easeOut", repeatType: "reverse" },
+                      }}
+                    >
+                      <ImageComponent type={Images.home} />
+                    </motion.div> */
+}

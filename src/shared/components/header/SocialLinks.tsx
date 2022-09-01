@@ -3,18 +3,21 @@ import { motion } from "framer-motion";
 import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
 import { Button, Tooltip } from "flowbite-react";
 
-interface SocialLinksProps {
-  transitionStatus: any;
-}
-
-const SocialLinks: React.FC<SocialLinksProps> = ({ transitionStatus }) => {
+const SocialLinks: React.FC = () => {
   return (
     <div className="flex justify-end relative">
       <motion.div
         className="flex flex-row items-center"
-        initial={{ y: -500 }}
-        animate={transitionStatus === "exiting" ? { y: -500 } : { y: 0 }}
-        transition={{ duration: 1.5 }}
+        initial={{ x: 5 }}
+        animate={{
+          x: -15,
+        }}
+        transition={{
+          ease: "easeInOut",
+          duration: 5,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
       >
         <a
           href="https://linkedin.com/in/abisalde"
