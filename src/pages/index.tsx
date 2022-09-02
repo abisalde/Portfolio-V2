@@ -9,7 +9,7 @@ import Typewriter from "typewriter-effect";
  * ? Local Imports
  */
 import { Header, LinkType } from "@portfolio-components/header";
-
+import { ImageComponent, Images } from "@portfolio-components/images";
 import { SEO } from "@portfolio-components/seo";
 import codePerson from "@assets/lottiefiles/code-person.json";
 
@@ -19,15 +19,16 @@ const IndexPage: React.FC = (props) => {
   const animationContainer = React.createRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    if (animationContainer.current) {
-      lottie.loadAnimation({
-        container: animationContainer.current as HTMLDivElement,
-        animationData: codePerson,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-      });
-    }
+    const animatingImage = lottie.loadAnimation({
+      container: animationContainer.current as HTMLDivElement,
+      animationData: codePerson,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+    });
+    return () => {
+      animatingImage.destroy();
+    };
   }, []);
 
   return (
@@ -189,8 +190,20 @@ const IndexPage: React.FC = (props) => {
                       </motion.li>
                     </ul>
                   </nav>
-                  <div className="xs:block sm:hidden flex justify-center items-center row-start-3 row-end-7 col-start-3 col-span-11">
-                    <div className="w-full h-full flex justify-center items-center">Test here</div>
+                  <div className="xs:block sm:hidden flex justify-center items-center row-start-3 row-end-7 col-start-3 col-end-11">
+                    <motion.div
+                      className="shadow-lg border-2 border-slate-400 w-full h-[85%] flex justify-center items-center dark:shadow-md dark:shadow-white"
+                      style={{
+                        borderRadius: "75% 25% 32% 68% / 53% 47% 53% 57%",
+                      }}
+                      initial={{ y: 10 }}
+                      animate={transitionStatus === "exiting" ? { y: -10 } : { y: 0 }}
+                      transition={{
+                        y: { duration: 1, repeat: Infinity, ease: "easeOut", repeatType: "reverse" },
+                      }}
+                    >
+                      <ImageComponent type={Images.home} />
+                    </motion.div>
                   </div>
                 </div>
                 <div className="xs:hidden sm:flex flex-col justify-center items-center">
