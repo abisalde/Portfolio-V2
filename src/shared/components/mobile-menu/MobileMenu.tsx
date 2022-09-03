@@ -36,7 +36,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ openMobileMenu, setOpenMobileMe
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="col-start-1 col-span-2 row-start-6 row-end-7 flex items-center m-1"
+          className="col-start-11 col-span-2 row-start-6 row-end-7 flex items-center m-1"
         >
           <motion.button
             onClick={handleClick}
@@ -52,11 +52,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ openMobileMenu, setOpenMobileMe
           return (
             <AniLink
               className={clsMerge(openMobileMenu && [className], openMobileMenu ? "flex flex-col" : "hidden", [
-                name === "Home" && ["col-start-6"],
+                name === "Home" && ["col-start-2"],
                 name === "About" && ["col-start-5"],
-                name === "Skills" && ["col-start-3"],
-                name === "Projects" && ["col-start-2"],
-                name === "Contact" && ["col-start-1"],
+                name === "Skills" && ["col-start-6"],
+                name === "Projects" && ["col-start-7"],
+                name === "Contact" && ["col-start-9"],
               ])}
               key={id}
               paintDrip
