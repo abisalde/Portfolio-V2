@@ -35,7 +35,14 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-plugin-sharp",
+    "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/pages`,
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -43,6 +50,13 @@ const config: GatsbyConfig = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages`,
+      },
     },
   ],
 };

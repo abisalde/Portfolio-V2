@@ -45,7 +45,8 @@ const About: React.FC = ({ transitionStatus, entry }: any) => {
                     key={id}
                     className="font-sans font-thin sm:text-base xs:text-tiny inline-block leading-6 text-justify"
                   >
-                    🌏️ {"   "} {description}.
+                    🌏️{"   "}
+                    {description}.
                   </li>
                 ))}
               </ul>
