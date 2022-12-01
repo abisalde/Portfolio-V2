@@ -13,6 +13,16 @@ const useWindowSize = () => {
     width: undefined,
     height: undefined,
   });
+  const handleWindowResize = useCallback(() => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  }, []);
+
+  const heightUpdate = useCallback(() => {
+    DOC.style.setProperty("--app-height", `${HEIGHT}px`);
+  }, [HEIGHT, DOC.style]);
 
   useEffect(() => {
     heightUpdate();
@@ -23,18 +33,7 @@ const useWindowSize = () => {
       window.removeEventListener("resize", heightUpdate);
       window.removeEventListener("resize", handleWindowResize);
     };
-  }, []);
-
-  const heightUpdate = useCallback(() => {
-    DOC.style.setProperty("--app-height", `${HEIGHT}px`);
-  }, [HEIGHT]);
-
-  const handleWindowResize = useCallback(() => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  }, [window.innerHeight, window.innerWidth]);
+  }, [handleWindowResize, heightUpdate]);
 
   return windowSize;
 };

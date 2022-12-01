@@ -50,7 +50,11 @@ const IndexPage: React.FC = (props) => {
                     <h1 className="sm:text-5xl xs:text-3xl dark:text-primary-main font-display">Isaiah Abiodun</h1>
                     <Typewriter
                       options={{
-                        strings: ["Full-Stack Web Developer.", "React-Native Mobile Developer.", "Software Engineer."],
+                        strings: [
+                          "Full-Stack Web Developer.",
+                          "Cross-Platform Mobile Developer.",
+                          "Software Engineer.",
+                        ],
                         autoStart: true,
                         loop: true,
                         wrapperClassName:
