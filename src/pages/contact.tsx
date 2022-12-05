@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import type { HeadFC } from "gatsby";
-// import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 /**
  * ? Local Imports
@@ -23,12 +23,19 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
             duration: 2.5,
           }}
         >
-          <div className="form-wrapper p-4 md:p-6 lg:p-8 flex">
-            <form className="signup-form max-w-sm rounded-2xl backdrop-blur-lg [ p-8 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ] [ border-[1px] border-solid border-white border-opacity-30 ] [ shadow-black/70 shadow-2xl ]">
-              <input className="" placeholder="Your name" name="name" aria-label="Your name" required type="text" />
+          <div className="form-wrapper p-4 flex sm:w-[45%] xs:w-full">
+            <form className="signup-form rounded-2xl backdrop-blur-lg [ p-8 md:p-10 lg:p-10 ] [ bg-gradient-to-b from-white/60 to-white/30 ] [ border-[1px] border-solid border-white border-opacity-30 ] [ shadow-black/70 shadow-2xl ] flex flex-col w-full">
+              <input
+                className="max-w-[350px]"
+                placeholder="Your name"
+                name="name"
+                aria-label="Your name"
+                required
+                type="text"
+              />
               <input
                 aria-label="Email address"
-                className=""
+                className="max-w-[350px]"
                 placeholder="Email Address"
                 name="name"
                 required
@@ -38,15 +45,24 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
               <textarea aria-label="Message" className="" placeholder="Let me know...." name="message" required />
             </form>
           </div>
-          {/* <TwitterTimelineEmbed
-            sourceType="profile"
-            screenName={"abisalde"}
-            options={{ height: 400, width: window.screen.width }}
-            autoHeight={false}
-            borderColor="#fff"
-            key={"twitter-em"}
-            noFooter={true}
-          /> */}
+          <div className="p-4 sm:w-[45%] xs:hidden sm:block">
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName={"abisalde"}
+              options={{ height: 200, width: window.screen.width }}
+              autoHeight={false}
+              borderColor="#fff"
+              key={"twitter-em"}
+              noFooter={true}
+            />
+            <div
+              className=""
+              style={{
+                boxShadow: "inset 1px 1px 1px #fff, -9px -9px 9px #e6e6e6, 9px 9px 20px rgba(199, 199, 199, 0.8)",
+                height: "300px",
+              }}
+            />
+          </div>
         </motion.div>
       )}
     </>

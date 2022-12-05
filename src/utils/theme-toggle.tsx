@@ -8,16 +8,18 @@ const ToggleButtonTheme: React.FC = () => {
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
-        <Button
-          aria-keyshortcuts="D"
-          size="sm"
-          outline={false}
-          color={"transparent"}
-          aria-label="Toggle Theme"
-          onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
-        >
-          {theme === "dark" ? <FiSun fontSize={20} /> : <BsMoon fontSize={20} />}
-        </Button>
+        <div className="flex justify-items-start">
+          <Button
+            aria-keyshortcuts="D"
+            size="sm"
+            outline={false}
+            color={"transparent"}
+            aria-label="Toggle Theme"
+            onClick={() => toggleTheme(theme === "dark" ? "light" : "dark")}
+          >
+            {theme === "dark" ? <FiSun fontSize={20} /> : <BsMoon fontSize={20} />}
+          </Button>
+        </div>
       )}
     </ThemeToggler>
   );
