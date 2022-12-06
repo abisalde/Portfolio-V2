@@ -18,6 +18,10 @@ module.exports = {
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    boxShadow: {
+      neu1: "inset 0.2em 0.2em 0.4em #fae9f6, inset -0.2em -0.2em 0.4em #fff",
+      neu2: "0.2em 0.2em 0.4em #fae9f6, -0.2em -0.2em 0.4em #fff",
+    },
     screens: {
       xs: "10px",
       sm: "765px",
