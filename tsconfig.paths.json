@@ -5,7 +5,7 @@
       "@portfolio-components/*": ["./shared/components/*"],
       "@utils": ["./utils/"],
       "@assets/*": ["./assets/*"],
-      "@hooks/*": ["./hooks/"],
+      "@hooks": ["./hooks/"],
       "@styles/*": ["./styles/*"],
       "@helpers": ["./helpers/"]
     }

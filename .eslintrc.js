@@ -18,7 +18,7 @@ module.exports = {
         avoidEscape: true,
       },
     ],
-    indent: ["error", 2],
+    indent: ["error", 2, { SwitchCase: 1 }],
     "no-console": "off",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-unused-vars": "warn",
