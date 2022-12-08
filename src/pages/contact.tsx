@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import type { HeadFC } from "gatsby";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { toast } from "react-toastify";
+import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
 
 /**
  * ? Local Imports
@@ -48,19 +49,32 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
           }}
         >
           <div className="p-4 sm:w-[45%] xs:hidden sm:block">
-            <TwitterTimelineEmbed
-              sourceType="profile"
-              screenName={"abisalde"}
-              options={{ height: 200, width: "100%" }}
-              autoHeight={false}
-              borderColor="#fff"
-              key={"twitter-em"}
-              noFooter={true}
-            />
+            <div className="flex flex-col w-full max-w-[550px] justify-center m-auto my-8">
+              <div className="flex flex-row flex-wrap justify-center items-center max-w-sm m-auto my-4">
+                <a
+                  href="https://linkedin.com/in/abisalde"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn Profile"
+                  className="px-2"
+                >
+                  <FaLinkedinIn fontSize={20} />
+                </a>
+              </div>
+              <TwitterTimelineEmbed
+                sourceType="profile"
+                screenName={"abisalde"}
+                options={{ height: 200, width: "100%" }}
+                autoHeight={false}
+                borderColor="#fff"
+                key={"twitter-em"}
+                noFooter={true}
+              />
+            </div>
           </div>
           <div className="form-wrapper p-4 flex flex-col sm:w-[45%] xs:w-full h-full">
             <form
-              className=" flex flex-col w-full max-w-[550px] justify-center m-auto"
+              className="flex flex-col w-full max-w-[550px] justify-center m-auto"
               onSubmit={handleSubmit}
               ref={form}
             >

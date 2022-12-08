@@ -60,7 +60,7 @@ export const useFormState = ({ submit }: IProps) => {
         break;
       case "message":
         if (value.length < 10) {
-          setErrors({ ...errors, message: "Soroke!, Try to add more letters" });
+          setErrors({ ...errors, message: "Soroke!, Try to add more words" });
         }
         if (value.length > 255) {
           setErrors({ ...errors, subject: "Please try and shape your letters not be more than 255" });
