@@ -1,5 +1,4 @@
 import * as React from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import type { HeadFC } from "gatsby";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
@@ -40,15 +39,8 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
     <>
       <Header view={LinkType.Contact} />
       {typeof window !== "undefined" && (
-        <motion.div
-          className="flex sm:flex-row xs:flex-col flex-nowrap justify-between w-full h-full mx-auto sm:px-10 xs:px-4 py-2"
-          initial={entry.state}
-          animate={transitionStatus === "exiting" ? { y: -window.innerWidth } : { y: 0 }}
-          transition={{
-            duration: 2.5,
-          }}
-        >
-          <div className="p-4 sm:w-[45%] xs:hidden sm:block">
+        <div className="flex sm:flex-row xs:flex-col flex-nowrap justify-between w-full h-full mx-auto sm:px-10 xs:px-4 py-2">
+          <div className="p-4 sm:w-[45%] xs:hidden sm:block h-full">
             <div className="flex flex-col w-full max-w-[550px] justify-center m-auto my-8">
               <div className="flex flex-row flex-wrap justify-center items-center max-w-sm m-auto my-4">
                 <a
@@ -151,7 +143,7 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
               </button>
             </form>
           </div>
-        </motion.div>
+        </div>
       )}
     </>
   );
