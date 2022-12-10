@@ -4,7 +4,7 @@ import type { HeadFC } from "gatsby";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { toast } from "react-toastify";
 import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
-
+import { Spinner } from "flowbite-react";
 /**
  * ? Local Imports
  */
@@ -53,15 +53,18 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
                   <FaLinkedinIn fontSize={20} />
                 </a>
               </div>
-              <TwitterTimelineEmbed
-                sourceType="profile"
-                screenName={"abisalde"}
-                options={{ height: 200, width: "100%" }}
-                autoHeight={false}
-                borderColor="#fff"
-                key={"twitter-em"}
-                noFooter={true}
-              />
+              <React.Suspense fallback={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}>
+                <TwitterTimelineEmbed
+                  placeholder={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}
+                  sourceType="profile"
+                  screenName={"abisalde"}
+                  options={{ height: 200, width: "100%" }}
+                  autoHeight={false}
+                  borderColor="#fff"
+                  key={"twitter-em"}
+                  noFooter={true}
+                />
+              </React.Suspense>
             </div>
           </div>
           <div className="form-wrapper p-4 flex flex-col sm:w-[45%] xs:w-full h-full">
