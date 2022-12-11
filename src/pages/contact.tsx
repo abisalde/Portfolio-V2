@@ -35,13 +35,31 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
 
   const { errors, handleChange, handleSubmit, values } = useFormState({ submit });
 
+  const SCREEN_WIDTH = window.screen.width;
+
   return (
     <>
       <Header view={LinkType.Contact} />
       {typeof window !== "undefined" && (
         <div className="flex sm:flex-row xs:flex-col flex-nowrap justify-between w-full h-full mx-auto sm:px-10 xs:px-4 py-2">
           <div className="p-4 sm:w-[45%] xs:hidden sm:block h-full">
-            <div className="flex flex-col w-full max-w-[550px] justify-center m-auto my-8">
+            <div className="flex flex-col w-full max-w-[650px] justify-center m-auto my-8 h-full">
+              <React.Suspense fallback={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}>
+                <div className="w-auto p-6">
+                  <div className="block text-center m-auto p-6">
+                    <TwitterTimelineEmbed
+                      placeholder={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}
+                      sourceType="profile"
+                      screenName={"abisalde"}
+                      options={{ height: 200, width: { SCREEN_WIDTH } }}
+                      autoHeight={false}
+                      borderColor="#fff"
+                      key={"twitter-em"}
+                      noFooter={true}
+                    />
+                  </div>
+                </div>
+              </React.Suspense>
               <div className="flex flex-row flex-wrap justify-center items-center max-w-sm m-auto my-4">
                 <a
                   href="https://linkedin.com/in/abisalde"
@@ -53,18 +71,6 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
                   <FaLinkedinIn fontSize={20} />
                 </a>
               </div>
-              <React.Suspense fallback={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}>
-                <TwitterTimelineEmbed
-                  placeholder={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}
-                  sourceType="profile"
-                  screenName={"abisalde"}
-                  options={{ height: 200, width: "100%" }}
-                  autoHeight={false}
-                  borderColor="#fff"
-                  key={"twitter-em"}
-                  noFooter={true}
-                />
-              </React.Suspense>
             </div>
           </div>
           <div className="form-wrapper p-4 flex flex-col sm:w-[45%] xs:w-full h-full">
