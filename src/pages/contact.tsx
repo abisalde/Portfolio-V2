@@ -1,7 +1,6 @@
 import * as React from "react";
-import emailjs from "@emailjs/browser";
 import type { HeadFC } from "gatsby";
-import { TwitterTimelineEmbed } from "react-twitter-embed";
+import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
 import { Spinner } from "flowbite-react";
@@ -46,18 +45,7 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
             <div className="flex flex-col w-full max-w-[650px] justify-center m-auto my-8 h-full">
               <React.Suspense fallback={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}>
                 <div className="w-auto p-6">
-                  <div className="block text-center m-auto p-6">
-                    <TwitterTimelineEmbed
-                      placeholder={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}
-                      sourceType="profile"
-                      screenName={"abisalde"}
-                      options={{ height: 200, width: { SCREEN_WIDTH } }}
-                      autoHeight={false}
-                      borderColor="#fff"
-                      key={"twitter-em"}
-                      noFooter={true}
-                    />
-                  </div>
+                  <div className="block text-center m-auto p-6"></div>
                 </div>
               </React.Suspense>
               <div className="flex flex-row flex-wrap justify-center items-center max-w-sm m-auto my-4">

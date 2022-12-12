@@ -19,8 +19,8 @@ module.exports = {
   ],
   theme: {
     boxShadow: {
-      neu1: "inset 0.2em 0.2em 0.4em #fae9f6, inset -0.2em -0.2em 0.4em #fff",
-      neu2: "0.2em 0.2em 0.4em #fae9f6, -0.2em -0.2em 0.4em #fff",
+      neu1: "inset 0.2em 0.2em 0.4em #54f6d2, inset -0.2em -0.2em 0.4em #fff",
+      neu2: "0.2em 0.2em 0.4em #54f6d2, -0.2em -0.2em 0.4em #fff",
     },
     screens: {
       xs: "10px",

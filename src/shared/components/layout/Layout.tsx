@@ -32,19 +32,14 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
 
   return (
-    <div
-      className="flex flex-1 visible flex-col transition-all overflow-hidden relative bg-cover bg-no-repeat select-none"
-      style={{
-        height: "var(--app-height)",
-      }}
-    >
+    <div className="main-app flex visible flex-col transition-all bg-cover bg-no-repeat select-none h-full">
       <ImageComponent type={Images.bg} />
-      <div className="p-2 relative z-20 flex justify-between items-center">
+      <div className="p-2 relative z-10 flex justify-between items-center">
         <ToggleButtonTheme />
         <SocialLinks />
       </div>
+      <main className="relative">{children}</main>
       <MobileMenu openMobileMenu={openMobileMenu} setOpenMobileMenu={setOpenMobileMenu} />
-      <main>{children}</main>
     </div>
   );
 };

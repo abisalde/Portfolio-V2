@@ -23,8 +23,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ openMobileMenu, setOpenMobileMe
     <>
       <div
         className={clsMerge(
-          "grid grid-cols-12 grid-rows-6 place-items-stretch absolute h-full w-full sm:hidden z-10",
-          openMobileMenu && ["backdrop-blur-sm bg-white/30 backdrop-saturate-500"],
+          "grid grid-cols-12 grid-rows-6 place-items-stretch absolute h-full w-full sm:hidden",
+          openMobileMenu && ["backdrop-blur-sm bg-white/30 backdrop-saturate-500 z-10"],
         )}
       >
         <motion.div

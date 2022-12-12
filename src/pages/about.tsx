@@ -37,9 +37,9 @@ const About: React.FC = ({ transitionStatus, entry }: any) => {
               I am a Software Engineer with hands on experience developing Mobile, Websites, and Full-Stack Web
               applications 🚀️.
             </motion.p>
-            <div className="py-3">
+            <div className="py-3 h-full overflow-y-auto overflow-hidden ">
               <span className="font-sans font-semibold">Who am I & What I do:</span>
-              <ul className="list-disc xs:overflow-y-auto sm:overflow-hidden xs:h-4/6 h-fit">
+              <ul className="list-disc  h-full overflow-y-auto mb-10">
                 {_DATA?.map(({ id, description }: AboutDataType) => (
                   <li
                     key={id}

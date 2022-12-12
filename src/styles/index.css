@@ -14,14 +14,20 @@ html {
   height: 100%;
 }
 
-main > div.tl-edges {
-  overflow: hidden;
+div.main-app {
+  height: 100vh;
+  height: var(--app-height);
   backface-visibility: visible;
-  height: calc(var(--app-height) - 100px);
-  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  transition: background-image 0.4s ease-in-out;
+  background-repeat: no-repeat;
 }
 
-div.tl-wrapper.tl-wrapper--mount {
-  min-height: auto;
+main > div.tl-edges > div.tl-wrapper.tl-wrapper--mount {
+  height: 100%;
   height: calc(var(--app-height) - 100px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
