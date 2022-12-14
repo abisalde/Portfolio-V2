@@ -65,7 +65,7 @@ export const NavLinks: NavLinkType[] = [
       appearAfter: 1,
     },
     className: "col-span-4 row-start-3 row-end-3 justify-center items-center h-full w-full",
-    color: "#0ce5b5",
+    color: "#15ea25",
     Icon: GrUserSettings,
   },
   {
@@ -82,7 +82,7 @@ export const NavLinks: NavLinkType[] = [
       },
     },
     className: "col-span-4 row-start-4 row-end-4 justify-center items-center h-full w-full",
-    color: "#CAF3F5",
+    color: "#5bb7f0",
     Icon: FaProjectDiagram,
   },
   {

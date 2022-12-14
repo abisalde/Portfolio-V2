@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
 import { Spinner } from "flowbite-react";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 /**
  * ? Local Imports
  */
@@ -34,7 +35,27 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
 
   const { errors, handleChange, handleSubmit, values } = useFormState({ submit });
 
-  const SCREEN_WIDTH = window.screen.width;
+  function MyMapComponent({ center, zoom }: { center: google.maps.LatLngLiteral; zoom: number }) {
+    const ref = React.createRef<HTMLDivElement>();
+
+    React.useEffect(() => {
+      new window.google.maps.Map(ref.current as HTMLDivElement, {
+        center,
+        zoom,
+      });
+    });
+
+    return <div ref={ref} id="map" />;
+  }
+
+  const render = (status: Status): React.ReactElement => {
+    if (status === Status.LOADING) return <h3>{status} ..</h3>;
+    if (status === Status.FAILURE) return <h3>{status} ...</h3>;
+    return <></>;
+  };
+
+  const center = { lat: -34.397, lng: 150.644 };
+  const zoom = 4;
 
   return (
     <>
@@ -45,7 +66,11 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
             <div className="flex flex-col w-full max-w-[650px] justify-center m-auto my-8 h-full">
               <React.Suspense fallback={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}>
                 <div className="w-auto p-6">
-                  <div className="block text-center m-auto p-6"></div>
+                  <div className="block text-center m-auto p-6">
+                    <Wrapper apiKey={process.env.MAP_API_KEY as string} render={render}>
+                      <MyMapComponent center={center} zoom={zoom} />
+                    </Wrapper>
+                  </div>
                 </div>
               </React.Suspense>
               <div className="flex flex-row flex-wrap justify-center items-center max-w-sm m-auto my-4">
