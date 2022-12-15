@@ -65,13 +65,13 @@ const Contact: React.FC = ({ transitionStatus, entry }: any) => {
           <div className="p-4 sm:w-[45%] xs:hidden sm:block h-full">
             <div className="flex flex-col w-full max-w-[650px] justify-center m-auto my-8 h-full">
               <React.Suspense fallback={<Spinner aria-label="Loading Twitter Profile" color="success" size="lg" />}>
-                <div className="w-auto p-6">
-                  <div className="block text-center m-auto p-6">
-                    <Wrapper apiKey={process.env.MAP_API_KEY as string} render={render}>
-                      <MyMapComponent center={center} zoom={zoom} />
-                    </Wrapper>
-                  </div>
-                </div>
+                {/* <div className="w-auto p-6"> */}
+                {/* <div className="block text-center m-auto p-6"> */}
+                <Wrapper apiKey={process.env.MAP_API_KEY as string} render={render}>
+                  <MyMapComponent center={center} zoom={zoom} />
+                </Wrapper>
+                {/* </div> */}
+                {/* </div> */}
               </React.Suspense>
               <div className="flex flex-row flex-wrap justify-center items-center max-w-sm m-auto my-4">
                 <a
