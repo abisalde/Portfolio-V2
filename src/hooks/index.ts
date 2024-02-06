@@ -1,2 +1,2 @@
-export { default as useWindowSize } from "./useWindowSize";
-export * from "./useFormState";
+export * from './useWindowSize';
+export * from './useFormState';
