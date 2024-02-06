@@ -1,9 +1,9 @@
 <h1 align="center">
-  Portfolio V1
+  Portfolio V2
 </h1>
 
 ## 🚀 Quick start
 
-**Created with Gatsby site.**
+**Created with Vite site.**
 
 ## 📚 Documentation
