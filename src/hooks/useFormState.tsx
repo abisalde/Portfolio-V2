@@ -1,144 +1,147 @@
 import * as React from 'react';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 interface IProps {
-	submit: () => Promise<void>;
+  submit: () => Promise<void>;
 }
 
 type NameProps = 'name' | 'email' | 'subject' | 'message';
 
 const testEmail = new RegExp(
-	/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 );
 
-export const useFormState = ({submit}: IProps) => {
-	const [values, setValues] = React.useState({
-		name: '',
-		email: '',
-		subject: '',
-		message: '',
-	});
+export const useFormState = ({ submit }: IProps) => {
+  const [values, setValues] = React.useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-	const [errors, setErrors] = React.useState({
-		name: '',
-		email: '',
-		subject: '',
-		message: '',
-	});
+  const [errors, setErrors] = React.useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-	const omitValue = (key: [NameProps], value: object) =>
-		Object.fromEntries(
-			Object.entries(value).filter(([k]) => !key.includes(k as NameProps))
-		);
+  const omitValue = (key: [NameProps], value: object) =>
+    Object.fromEntries(
+      Object.entries(value).filter(([k]) => !key.includes(k as NameProps)),
+    );
 
-	const validateInput = React.useCallback(
-		(name: NameProps, value: string) => {
-			switch (name) {
-				case 'name':
-					if (value.length < 3) {
-						setErrors({...errors, name: 'Name character is too short'});
-					} else {
-						const newErrors = omitValue(['name'], errors);
-						setErrors((prev) => ({...prev, ...newErrors}));
-					}
-					break;
+  const validateInput = React.useCallback(
+    (name: NameProps, value: string) => {
+      switch (name) {
+        case 'name':
+          if (value.length < 3) {
+            setErrors({ ...errors, name: 'Name character is too short' });
+          } else {
+            const newErrors = omitValue(['name'], errors);
+            setErrors((prev) => ({ ...prev, ...newErrors }));
+          }
+          break;
 
-				case 'email':
-					if (!testEmail.test(value)) {
-						setErrors({...errors, email: 'Please enter a valid email address'});
-					} else {
-						const newErrors = omitValue(['email'], errors);
-						setErrors((prev) => ({...prev, ...newErrors}));
-					}
-					break;
+        case 'email':
+          if (!testEmail.test(value)) {
+            setErrors({
+              ...errors,
+              email: 'Please enter a valid email address',
+            });
+          } else {
+            const newErrors = omitValue(['email'], errors);
+            setErrors((prev) => ({ ...prev, ...newErrors }));
+          }
+          break;
 
-				case 'subject':
-					if (value.length < 4) {
-						setErrors({
-							...errors,
-							subject: 'Subject characters/letters is too short',
-						});
-					} else {
-						const newErrors = omitValue(['subject'], errors);
-						setErrors((prev) => ({...prev, ...newErrors}));
-					}
+        case 'subject':
+          if (value.length < 4) {
+            setErrors({
+              ...errors,
+              subject: 'Subject characters/letters is too short',
+            });
+          } else {
+            const newErrors = omitValue(['subject'], errors);
+            setErrors((prev) => ({ ...prev, ...newErrors }));
+          }
 
-					break;
-				case 'message':
-					if (value.length < 10) {
-						setErrors({...errors, message: 'Soroke!, Try to add more words'});
-					}
-					if (value.length > 255) {
-						setErrors({
-							...errors,
-							subject: 'Please try and shape your letters not be more than 255',
-						});
-					} else if (value.length > 10 && value.length <= 255) {
-						const newErrors = omitValue(['message'], errors);
-						setErrors((prev) => ({...prev, ...newErrors}));
-					}
+          break;
+        case 'message':
+          if (value.length < 10) {
+            setErrors({ ...errors, message: 'Soroke!, Try to add more words' });
+          }
+          if (value.length > 255) {
+            setErrors({
+              ...errors,
+              subject: 'Please try and shape your letters not be more than 255',
+            });
+          } else if (value.length > 10 && value.length <= 255) {
+            const newErrors = omitValue(['message'], errors);
+            setErrors((prev) => ({ ...prev, ...newErrors }));
+          }
 
-					break;
-				default:
-					break;
-			}
-		},
-		[errors]
-	);
+          break;
+        default:
+          break;
+      }
+    },
+    [errors],
+  );
 
-	const handleChange = React.useCallback(
-		(
-			e: React.ChangeEvent<HTMLInputElement> &
-				React.ChangeEvent<HTMLTextAreaElement>
-		) => {
-			e.persist();
+  const handleChange = React.useCallback(
+    (
+      e: React.ChangeEvent<HTMLInputElement> &
+        React.ChangeEvent<HTMLTextAreaElement>,
+    ) => {
+      e.persist();
 
-			const {name, value} = e.target;
+      const { name, value } = e.target;
 
-			validateInput(name as NameProps, value);
+      validateInput(name as NameProps, value);
 
-			setValues({...values, [name]: value});
-		},
-		[validateInput, values]
-	);
+      setValues({ ...values, [name]: value });
+    },
+    [validateInput, values],
+  );
 
-	const handleSubmit = React.useCallback(
-		async (e: React.FormEvent<HTMLFormElement>) => {
-			if (e) {
-				e.preventDefault();
-				e.stopPropagation();
-			}
+  const handleSubmit = React.useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
 
-			if (
-				Object.keys(errors).length === 0 &&
-				Object.keys(values).length !== 0
-			) {
-				await submit();
-				setErrors({
-					name: '',
-					email: '',
-					subject: '',
-					message: '',
-				});
-				setValues({
-					name: '',
-					email: '',
-					subject: '',
-					message: '',
-				});
-			} else {
-				toast.info(
-					'Form could not be submitting, please fill out the form required fields'
-				);
-			}
-		},
-		[submit, errors, values]
-	);
+      if (
+        Object.keys(errors).length === 0 &&
+        Object.keys(values).length !== 0
+      ) {
+        await submit();
+        setErrors({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+        setValues({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        toast.info(
+          'Form could not be submitting, please fill out the form required fields',
+        );
+      }
+    },
+    [submit, errors, values],
+  );
 
-	return {
-		errors,
-		handleChange,
-		handleSubmit,
-		values,
-	};
+  return {
+    errors,
+    handleChange,
+    handleSubmit,
+    values,
+  };
 };

@@ -4,12 +4,12 @@
  */
 import { SEO } from '@portfolio-components/SEO';
 
-export const AboutPage = () => {
+export const PortfolioPage = () => {
   return (
     <section className='flex h-full flex-col'>
-      <SEO pathname='about' title='About Me ::: Portfolio' />
+      <SEO pathname='portfolio' title='My Work ::: Portfolio' />
       <div className='gradient-bg'>
-        <h2>Welcome to About Page</h2>
+        <h2>Welcome to Portfolio</h2>
       </div>
     </section>
   );
