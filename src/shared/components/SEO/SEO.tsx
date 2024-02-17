@@ -1,134 +1,134 @@
 import * as React from 'react';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 interface SEOProps {
-	description?: string;
-	pathname?: string;
-	title?: string;
+  description?: string;
+  pathname?: string;
+  title?: string;
 }
 
-export const SEO: React.FC<SEOProps> = ({description, pathname, title}) => {
-	const siteTitle = title ?? 'Abisalde ::: Portfolio';
-	return (
-		<Helmet>
-			<meta charSet='utf-8' />
-			<title>{siteTitle}</title>
-			<meta name='description' content={metaDescription || description} />
-			<meta property='og:url' content={`https://abisalde.tech/${pathname}`} />
-			<link rel='canonical' href={`https://abisalde.tech/${pathname}`} />
-			{/* Open Graph */}
-			<meta property='og:type' content='website' />
-			<meta property='og:site_name' content={siteTitle} />
-			<meta
-				property='og:description'
-				content={description ?? metaDescription}
-			/>
-			<meta property='og:title' content={siteTitle} />
-			<meta name='image' property='og:image' content='' />
-			{/* Twitter */}
-			<meta name='twitter:card' content='summary' />
-			<meta name='twitter:site' content='@abisalde' />
-			<meta name='twitter:creator' content='@abisalde' />
-			<meta
-				name='twitter:description'
-				content={description ?? metaDescription}
-			/>
-			<meta name='twitter:image' content='' />
-			<meta name='theme-color' content='#FEFBEA' />
-			<meta name='msapplication-TileColor' content='#ffffff' />
-			{favicons.map((links) => (
-				<link key={links.href} {...links} />
-			))}
-		</Helmet>
-	);
+export const SEO: React.FC<SEOProps> = ({ description, pathname, title }) => {
+  const siteTitle = title ?? 'Abisalde ::: Portfolio';
+  return (
+    <Helmet>
+      <meta charSet='utf-8' />
+      <title>{siteTitle}</title>
+      <meta name='description' content={metaDescription || description} />
+      <meta property='og:url' content={`https://abisalde.tech/${pathname}`} />
+      <link rel='canonical' href={`https://abisalde.tech/${pathname}`} />
+      {/* Open Graph */}
+      <meta property='og:type' content='website' />
+      <meta property='og:site_name' content={siteTitle} />
+      <meta
+        property='og:description'
+        content={description ?? metaDescription}
+      />
+      <meta property='og:title' content={siteTitle} />
+      <meta name='image' property='og:image' content='' />
+      {/* Twitter */}
+      <meta name='twitter:card' content='summary' />
+      <meta name='twitter:site' content='@abisalde' />
+      <meta name='twitter:creator' content='@abisalde' />
+      <meta
+        name='twitter:description'
+        content={description ?? metaDescription}
+      />
+      <meta name='twitter:image' content='' />
+      <meta name='theme-color' content='#FEFBEA' />
+      <meta name='msapplication-TileColor' content='#ffffff' />
+      {favicons.map((links) => (
+        <link key={links.href} {...links} />
+      ))}
+    </Helmet>
+  );
 };
 
 const metaDescription =
-	'I am Software Engineer with focus on frontend development building scalable, readable, maintainable pixel perfect UI both on mobile and web applications';
+  'I am Software Engineer with focus on frontend development building scalable, readable, maintainable pixel perfect UI both on mobile and web applications';
 
 interface Favicons {
-	rel: string;
-	href: string;
-	sizes?: string;
-	type?: string;
+  rel: string;
+  href: string;
+  sizes?: string;
+  type?: string;
 }
 
 const favicons: Favicons[] = [
-	{
-		rel: 'apple-touch-icon',
-		sizes: '57x57',
-		href: '/favicon/apple-icon-57x57.png',
-	},
-	{
-		rel: 'apple-touch-icon',
-		sizes: '60x60',
-		href: '/favicon/apple-icon-60x60.png',
-	},
-	{
-		rel: 'apple-touch-icon',
-		sizes: '72x72',
-		href: '/favicon/apple-icon-72x72.png',
-	},
-	{
-		rel: 'apple-touch-icon',
-		sizes: '76x76',
-		href: '/favicon/apple-icon-76x76.png',
-	},
-	{
-		rel: 'apple-touch-icon',
-		sizes: '114x114',
-		href: '/favicon/apple-icon-114x114.png',
-	},
-	{
-		rel: 'apple-touch-icon',
-		sizes: '120x120',
-		href: '/favicon/apple-icon-120x120.png',
-	},
-	{
-		rel: 'apple-touch-icon',
-		sizes: '144x144',
-		href: '/favicon/apple-icon-144x144.png',
-	},
-	{
-		rel: 'apple-touch-icon',
-		sizes: '152x152',
-		href: '/favicon/apple-icon-152x152.png',
-	},
-	{
-		rel: 'apple-touch-icon',
-		sizes: '180x180',
-		href: '/favicon/apple-icon-180x180.png',
-	},
-	{
-		rel: 'icon',
-		type: 'image/png',
-		sizes: '192x192',
-		href: '/favicon/android-icon-192x192.png',
-	},
-	{
-		rel: 'icon',
-		type: 'image/png',
-		sizes: '32x32',
-		href: '/favicon/favicon-32x32.png',
-	},
-	{
-		rel: 'icon',
-		type: 'image/png',
-		sizes: '96x96',
-		href: '/favicon/favicon-96x96.png',
-	},
-	{
-		rel: 'icon',
-		type: 'image/png',
-		sizes: '16x16',
-		href: '/favicon/favicon-16x16.png',
-	},
-	{
-		rel: 'manifest',
-		href: '/manifest.json',
-	},
-	{
-		rel: 'shortcut icon',
-		href: '/favicon.ico',
-	},
+  {
+    rel: 'apple-touch-icon',
+    sizes: '57x57',
+    href: '/favicon/apple-icon-57x57.png',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '60x60',
+    href: '/favicon/apple-icon-60x60.png',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '72x72',
+    href: '/favicon/apple-icon-72x72.png',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '76x76',
+    href: '/favicon/apple-icon-76x76.png',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '114x114',
+    href: '/favicon/apple-icon-114x114.png',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '120x120',
+    href: '/favicon/apple-icon-120x120.png',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '144x144',
+    href: '/favicon/apple-icon-144x144.png',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '152x152',
+    href: '/favicon/apple-icon-152x152.png',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '180x180',
+    href: '/favicon/apple-icon-180x180.png',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '192x192',
+    href: '/favicon/android-icon-192x192.png',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '32x32',
+    href: '/favicon/favicon-32x32.png',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '96x96',
+    href: '/favicon/favicon-96x96.png',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '16x16',
+    href: '/favicon/favicon-16x16.png',
+  },
+  {
+    rel: 'manifest',
+    href: '/manifest.json',
+  },
+  {
+    rel: 'shortcut icon',
+    href: '/favicon.ico',
+  },
 ];
