@@ -8,6 +8,7 @@ export default {
     boxShadow: {
       neu1: 'inset 0.2em 0.2em 0.4em #54f6d2, inset -0.2em -0.2em 0.4em #fff',
       neu2: '0.2em 0.2em 0.4em #54f6d2, -0.2em -0.2em 0.4em #fff',
+      neu3: '0.2em 0.2em 0.4em #ccc, -0.2em -0.2em 0.4em #141414',
     },
     screens: {
       xs: '10px',

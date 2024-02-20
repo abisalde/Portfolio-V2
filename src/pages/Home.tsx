@@ -3,11 +3,12 @@
  * ? Local & Shared Imports
  */
 
+import { LetsChat } from '@portfolio-components/LetsChat';
 import { SEO } from '@portfolio-components/SEO';
 
 export const HomePage = () => {
   return (
-    <section className='px-24md:px-12 relative flex h-full w-full flex-col justify-center gap-10'>
+    <section className='flex h-full w-full flex-col justify-center gap-6 px-5  md:gap-10 md:px-12'>
       <SEO title='Isaiah Abiodun | Frontend Engineer' />
       <div className='flex flex-wrap items-center justify-start gap-x-6 gap-y-0 lg:w-[90%]'>
         <h1 className='text-4xl font-normal leading-tight text-white md:text-6xl lg:text-7xl'>
@@ -35,22 +36,8 @@ export const HomePage = () => {
           increasing engagement
         </h5>
 
-        <div className='mt-5 md:mt-12'>
-          <div className='inline-flex items-center space-x-4'>
-            <img
-              width='60'
-              height='60'
-              src='image/isaiah-abiodun@abisalde.jpg'
-              alt='Isaiah Abiodun ::: Thumbnail Portfolio'
-              className='border-w h-14 w-14 rounded-full border-white'
-            />
-            <button
-              type='button'
-              className='say-hello w-full max-w-40 cursor-pointer text-nowrap rounded-xl  border-0 border-solid px-5  py-1.5 text-2xl font-medium tracking-wider text-white outline outline-2 outline-offset-0  outline-white ring-0 hover:border-2 hover:border-solid hover:stroke-indigo-300 hover:outline-offset-[15px] hover:outline-dark'
-            >
-              Let's Chat
-            </button>
-          </div>
+        <div className='relative mt-5 md:mt-12'>
+          <LetsChat displayImage={true} />
         </div>
       </div>
     </section>

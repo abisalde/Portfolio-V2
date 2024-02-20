@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 /**
  * ? Local & Shared Imports
  */
+import { LetsChat } from '@portfolio-components/LetsChat';
+
 import { useWindowSize } from '@hooks';
 
 export const Header: React.FC = () => {
@@ -38,21 +40,18 @@ export const Header: React.FC = () => {
         </Link>
         <nav role='navigation'>
           <MobileMenu onClick={handleMobileMenu} />
-          <ul className='hidden items-center space-x-3 md:flex'>
-            <li className='text-nowrap font-primary text-white'>
-              <Link to='about' className='text-nowrap'>
+          <ul className='hidden items-center md:flex md:space-x-3 lg:space-x-5'>
+            <li className='relative text-nowrap pb-2 font-primary text-white transition-all before:absolute before:bottom-0 before:right-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'>
+              <Link to='about' className='text-nowrap text-lg'>
                 About Me
               </Link>
             </li>
-            <li className='font-primary text-white'>
-              <Link to='portfolio'>Portfolio</Link>
+            <li className='relative text-nowrap pb-2 font-primary text-white transition-all before:absolute before:bottom-0 before:right-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'>
+              <Link to='portfolio' className='text-lg'>
+                Portfolio
+              </Link>
             </li>
-            <button
-              type='button'
-              className='say-hello w-full max-w-40 cursor-pointer text-nowrap rounded-xl  border-0 border-solid px-5  py-1.5 text-2xl font-medium tracking-wider text-white outline outline-2 outline-offset-0  outline-white ring-0 hover:border-2 hover:border-solid hover:stroke-indigo-300 hover:outline-offset-[15px] hover:outline-dark'
-            >
-              Let's Chat
-            </button>
+            <LetsChat />
           </ul>
         </nav>
         {openMobileMenu && typeof width === 'number' && width < 764 ? (
@@ -65,6 +64,9 @@ export const Header: React.FC = () => {
             }}
             role='navigation'
             className='mobile-navigation menu absolute right-0 top-[80%] z-50 mx-auto mt-2 w-full p-4'
+            style={{
+              zIndex: 100,
+            }}
           >
             <ul className='flex h-full w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'>
               <li
