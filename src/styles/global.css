@@ -9,7 +9,7 @@
     font-weight: 100 900;
     src:
       local('Alexana'),
-      url('fonts/alexana.otf') format('opentype');
+      url('../../public/fonts/alexana.otf') format('opentype');
   }
 
   @font-face {
@@ -18,7 +18,7 @@
     font-weight: 100 900;
     src:
       local('Rubik Dirt Display'),
-      url('fonts/RubikDirt-Regular.ttf') format('truetype');
+      url('../../public/fonts/RubikDirt-Regular.ttf') format('truetype');
   }
 
   @font-face {
@@ -27,7 +27,7 @@
     font-weight: 100 900;
     src:
       local('Punk Cyber Extrude'),
-      url('fonts/PunkCyberDemoExtrude.ttf') format('truetype');
+      url('../../public/fonts/PunkCyberDemoExtrude.ttf') format('truetype');
   }
 
   @font-face {
@@ -36,7 +36,7 @@
     font-weight: 100 900;
     src:
       local('Punk Cyber Outline'),
-      url('fonts/PunkCyberDemoOutline.ttf') format('truetype');
+      url('../../public/fonts/PunkCyberDemoOutline.ttf') format('truetype');
   }
 
   @font-face {
@@ -45,7 +45,7 @@
     font-weight: 100 900;
     src:
       local('Punk Cyber Regular'),
-      url('fonts/PunkCyberDemoRegular.ttf') format('truetype');
+      url('../../public/fonts/PunkCyberDemoRegular.ttf') format('truetype');
   }
 
   *,
