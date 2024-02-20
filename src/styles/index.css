@@ -15,6 +15,7 @@
 
 html {
   height: 100%;
+  scroll-behaviour: smooth;
 }
 
 div.main-app {
@@ -26,24 +27,4 @@ div.main-app {
   transition: background-image 0.4s ease-in-out;
   background-repeat: no-repeat;
   font-family: 'Lato';
-}
-
-nav.mobile-navigate.menu {
-  transform: translateY(0px) translateX(0px);
-  transition: transform 400ms ease 0s;
-}
-
-div.instagram-gradient:hover {
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
-}
-
-button.say-hello {
-  transition: all 550ms cubic-bezier(0.36, 0.63, 0.5, 0.73);
 }

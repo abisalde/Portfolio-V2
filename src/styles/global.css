@@ -2,31 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* #region  /**=========== Primary Color =========== */
-  --tw-color-primary-50: 240 249 255;
-  --tw-color-primary-100: 224 242 254;
-  --tw-color-primary-200: 186 230 253;
-  --tw-color-primary-300: 125 211 252;
-  --tw-color-primary-400: 56 189 248;
-  --tw-color-primary-500: 14 165 233;
-  --tw-color-primary-600: 2 132 199;
-  --tw-color-primary-700: 3 105 161;
-  --tw-color-primary-800: 7 89 133;
-  --tw-color-primary-900: 12 74 110;
-  --color-primary-50: rgb(var(--tw-color-primary-50)); /* #f0f9ff */
-  --color-primary-100: rgb(var(--tw-color-primary-100)); /* #e0f2fe */
-  --color-primary-200: rgb(var(--tw-color-primary-200)); /* #bae6fd */
-  --color-primary-300: rgb(var(--tw-color-primary-300)); /* #7dd3fc */
-  --color-primary-400: rgb(var(--tw-color-primary-400)); /* #38bdf8 */
-  --color-primary-500: rgb(var(--tw-color-primary-500)); /* #0ea5e9 */
-  --color-primary-600: rgb(var(--tw-color-primary-600)); /* #0284c7 */
-  --color-primary-700: rgb(var(--tw-color-primary-700)); /* #0369a1 */
-  --color-primary-800: rgb(var(--tw-color-primary-800)); /* #075985 */
-  --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
-  /* #endregion  /**======== Primary Color =========== */
-}
-
 @layer {
   @font-face {
     font-family: 'Alexana';
@@ -80,9 +55,64 @@
   }
 }
 
-.gradient-bg {
-  background-image: linear-gradient(to right, black, blue 400px, black 800px);
-  background-size: 800px 100%;
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
+nav.mobile-navigate.menu {
+  transform: translateY(0px) translateX(0px);
+  transition: transform 400ms ease 0s;
+}
+
+div.instagram-gradient:hover {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+button.say-hello {
+  transition: all 550ms cubic-bezier(0.36, 0.63, 0.5, 0.73);
+}
+
+div.skills-container {
+  transform: rotateX(51deg) rotateZ(49deg);
+}
+
+div.portfolio-scroll {
+  height: calc(var(--app-height) - 310px);
+}
+
+div.portfolio-scroll::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+div.portfolio-scroll::-webkit-scrollbar-track {
+  background-color: #141414;
+
+  /* Change the box shadow */
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+div.portfolio-scroll::-webkit-scrollbar-thumb {
+  /* Change the background color */
+  background-color: rgba(228, 239, 232, 1);
+
+  /* Change the size of the thumb */
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+}
+
+img.project-image {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+
+@media screen and (min-width: 100px) and (max-width: 768px) {
+  div.portfolio-scroll {
+    height: calc(var(--app-height) - 220px);
+    scroll-snap-align: center;
+  }
 }

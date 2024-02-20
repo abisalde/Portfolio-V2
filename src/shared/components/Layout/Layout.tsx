@@ -13,7 +13,7 @@ export const Layout: React.FC = () => {
     <div className='main-app visible relative flex h-full w-full  select-none flex-col bg-dark transition-all'>
       <BackgroundGradientText />
       <Header />
-      <main className='h-full grow p-4 md:p-5 lg:py-6'>
+      <main className='h-full grow'>
         <Outlet />
       </main>
       <footer className='relative flex flex-col justify-center justify-self-end text-center text-white'>
