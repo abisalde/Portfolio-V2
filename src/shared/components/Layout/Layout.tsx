@@ -8,12 +8,13 @@ import { BackgroundGradientText } from './BackgroundGradientText';
 import { Header } from '@portfolio-components/Header';
 import { Socials } from '@portfolio-components/Socials';
 
-export const Layout: React.FC = () => {
+export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <div className='main-app visible relative flex h-full w-full  select-none flex-col bg-dark transition-all'>
       <BackgroundGradientText />
       <Header />
       <main className='h-full grow'>
+        {children}
         <Outlet />
       </main>
       <footer className='relative flex flex-col justify-center justify-self-end text-center text-white'>
