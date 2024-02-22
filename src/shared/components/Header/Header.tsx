@@ -63,27 +63,40 @@ export const Header: React.FC = () => {
               duration: 1,
             }}
             role='navigation'
-            className='mobile-navigation menu absolute right-0 top-[80%] z-50 mx-auto mt-2 w-full p-4'
-            style={{
-              zIndex: 100,
-            }}
+            tabIndex={-1}
+            className='mobile-navigation menu fixed inset-0 right-0 top-[5%]  mx-auto mt-2 w-full p-4'
           >
-            <ul className='relative z-50 flex h-full w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'>
-              <li
+            <div
+              aria-hidden='true'
+              className='fixed inset-0 cursor-text bg-opacity-75 blur-3xl transition-opacity'
+              onClick={handleMobileMenu}
+            ></div>
+            <motion.ul
+              className='relative  z-50 flex h-40 w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'
+              style={{ zIndex: 1000 }}
+              variants={variantsUl}
+            >
+              <motion.li
                 className='font-primary text-lg text-white'
                 role='button'
                 onClick={handleMobileMenu}
+                variants={variantsLi}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Link to='about'>About Me</Link>
-              </li>
-              <li
+              </motion.li>
+              <motion.li
                 className='font-primary text-lg text-white'
                 role='button'
                 onClick={handleMobileMenu}
+                variants={variantsLi}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Link to='portfolio'>Portfolio</Link>
-              </li>
-            </ul>
+              </motion.li>
+            </motion.ul>
           </motion.nav>
         ) : null}
       </header>
@@ -97,24 +110,55 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ onClick }: MobileMenuProps) => {
   return (
-    <div
+    <button
       onClick={onClick}
       className='backdrop-saturate-500 flex h-11 w-11 items-center justify-center rounded-full bg-white/30 shadow-white backdrop-blur-sm md:hidden'
       role='button'
       aria-label='Click to open mobile menu'
     >
-      <svg
+      <motion.svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 24 24'
         fill='currentColor'
         className='h-6 w-6 text-white'
       >
-        <path
+        <motion.path
+          variants={{
+            closed: { opacity: 1 },
+            open: { opacity: 0 },
+          }}
+          transition={{ duration: 0.1 }}
           fillRule='evenodd'
           d='M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z'
           clipRule='evenodd'
         />
-      </svg>
-    </div>
+      </motion.svg>
+    </button>
   );
+};
+
+const variantsUl = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
+
+const variantsLi = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
 };
