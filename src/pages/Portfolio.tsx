@@ -16,7 +16,7 @@ export const PortfolioPage = () => {
       </h2>
       <div></div>
       <div className='portfolio-scroll flex w-full flex-col overflow-y-auto px-4 pb-10 pt-6'>
-        <motion.div className='relative grid grid-flow-row grid-cols-1 justify-center gap-9 lg:grid-cols-2'>
+        <motion.div className='grid grid-flow-row grid-cols-1 justify-center gap-9 lg:grid-cols-2'>
           {ArrayPortfolio.map((portfolio) => (
             <PortfolioCard key={portfolio.id} {...portfolio} />
           ))}

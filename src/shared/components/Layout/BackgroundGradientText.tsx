@@ -4,7 +4,7 @@ export const BackgroundGradientText: React.FC = () => {
   const [text] = React.useState<string>(newTextArray);
 
   return (
-    <div className='absolute z-0 h-full w-full text-wrap'>
+    <div className='-z-1 absolute h-full w-full text-wrap'>
       <div className='bg-gradient-to-r from-dark to-black font-primary text-base tracking-wider text-white opacity-5'>
         {text}
       </div>
