@@ -8,7 +8,7 @@ import { SEO } from '@portfolio-components/SEO';
 export const NotFoundPage = () => {
   return (
     <Layout>
-      <SEO pathname='Not Found ::: Portfolio' />
+      <SEO pathname='*' title='404 ::: Isaiah Abiodun | Portfolio' />
       <div className='flex h-full w-full flex-col items-center justify-center px-4'>
         <h2 className='font-display text-[5rem] text-slate-400 md:text-[15rem] lg:text-[25rem]'>
           4 0 4

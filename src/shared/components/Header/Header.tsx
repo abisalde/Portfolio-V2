@@ -68,7 +68,7 @@ export const Header: React.FC = () => {
               zIndex: 100,
             }}
           >
-            <ul className='flex h-full w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'>
+            <ul className='relative z-50 flex h-full w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'>
               <li
                 className='font-primary text-lg text-white'
                 role='button'

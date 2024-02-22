@@ -103,7 +103,7 @@ const dataArray = [
   },
   {
     id: 'about-me-102',
-    text: 'I am a graduate of engineering with good understanding about engineering principles and concepts.',
+    text: 'I am a graduate of Engineering with good understanding about Engineering principles and concepts.',
   },
   {
     id: 'about-me-203',
