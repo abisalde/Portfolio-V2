@@ -13,18 +13,19 @@ export const SEO: React.FC<SEOProps> = ({ description, pathname, title }) => {
     <Helmet>
       <meta charSet='utf-8' />
       <title>{siteTitle}</title>
-      <meta name='description' content={metaDescription || description} />
-      <meta property='og:url' content={`https://abisalde.tech/${pathname}`} />
-      <link rel='canonical' href={`https://abisalde.tech/${pathname}`} />
+      <meta name='description' content={description ?? metaDescription} />
+      <meta property='og:url' content={`https://abisalde.dev/${pathname}`} />
+      <link rel='canonical' href={`https://abisalde.dev/${pathname}`} />
       {/* Open Graph */}
       <meta property='og:type' content='website' />
       <meta property='og:site_name' content={siteTitle} />
-      <meta
-        property='og:description'
-        content={description ?? metaDescription}
-      />
+      <meta property='og:description' content={metaDescription} />
       <meta property='og:title' content={siteTitle} />
-      <meta name='image' property='og:image' content='' />
+      <meta
+        name='image'
+        property='og:image'
+        content='https://i.imgur.com/gH5efIX.png'
+      />
       {/* Twitter */}
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:site' content='@abisalde' />
@@ -33,7 +34,7 @@ export const SEO: React.FC<SEOProps> = ({ description, pathname, title }) => {
         name='twitter:description'
         content={description ?? metaDescription}
       />
-      <meta name='twitter:image' content='' />
+      <meta name='twitter:image' content='https://i.imgur.com/gH5efIX.png' />
       <meta name='theme-color' content='#FEFBEA' />
       <meta name='msapplication-TileColor' content='#ffffff' />
       {favicons.map((links) => (
