@@ -18,6 +18,7 @@ To get started developing right away:
 
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Calendly](https://calendly.com/)
 - [React Router DOM](https://reacttraining.com/react-router/web/guides/quick-start)
 - [React Icons](https://react-icons.github.io/react-icons/)
 
