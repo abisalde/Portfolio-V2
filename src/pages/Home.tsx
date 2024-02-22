@@ -9,7 +9,7 @@ import { SEO } from '@portfolio-components/SEO';
 export const HomePage = () => {
   return (
     <section className='flex h-full w-full flex-col justify-center gap-6 px-5  md:gap-8 md:px-12'>
-      <SEO title='Isaiah Abiodun | Frontend Engineer' />
+      <SEO title='Isaiah Abiodun | Software Engineer' />
       <div className='flex flex-wrap items-center justify-start gap-x-6 gap-y-0 lg:w-[80%] xl:w-[75%]'>
         <h1 className='text-4xl font-normal leading-tight text-white md:text-6xl '>
           Creating interactive{' '}
