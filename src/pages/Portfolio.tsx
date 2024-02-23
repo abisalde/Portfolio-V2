@@ -17,6 +17,13 @@ export const PortfolioPage = () => {
       <div></div>
       <div className='portfolio-scroll relative flex w-full flex-col overflow-y-auto px-4 pb-10 pt-6'>
         <motion.div className='grid grid-flow-row grid-cols-1 justify-center gap-9 lg:grid-cols-2'>
+          <div
+            className='h-[inherit] overflow-hidden rounded-xl shadow-neu3 hover:shadow-neu2 focus:shadow-neu2'
+            data-snack-id='@abisalde/customswitchreactnative'
+            data-snack-platform='web'
+            data-snack-preview='true'
+            data-snack-theme='dark'
+          ></div>
           {ArrayPortfolio.map((portfolio) => (
             <PortfolioCard key={portfolio.id} {...portfolio} />
           ))}
