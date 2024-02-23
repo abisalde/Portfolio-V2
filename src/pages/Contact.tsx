@@ -6,7 +6,7 @@ import * as React from 'react';
 import { CalendlySchedule } from '@portfolio-components/CalendlySchedule';
 import { LoadingAnimation } from '@portfolio-components/LoadingAnimation';
 
-export const LetsChatPage = () => {
+export const ContactPage = () => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {

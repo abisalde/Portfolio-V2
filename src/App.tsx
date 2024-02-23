@@ -12,7 +12,7 @@ import { Layout } from '@portfolio-components/Layout';
 import {
   AboutPage,
   HomePage,
-  LetsChatPage,
+  ContactPage,
   NotFoundPage,
   PortfolioPage,
 } from '@pages';
@@ -28,7 +28,7 @@ const router = createBrowserRouter(
       <Route index element={<HomePage />} path={ROUTE.home_page} />
       <Route element={<AboutPage />} path={ROUTE.about_page} />
       <Route element={<PortfolioPage />} path={ROUTE.portfolio_page} />
-      <Route element={<LetsChatPage />} path={ROUTE.lets_chat} />
+      <Route element={<ContactPage />} path={ROUTE.lets_chat} />
     </Route>,
   ),
 );

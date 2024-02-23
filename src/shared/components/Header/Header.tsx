@@ -24,7 +24,11 @@ export const Header: React.FC = () => {
   return (
     <>
       <header className='sticky top-0 flex w-full items-center justify-between p-4 py-3 md:px-5 md:py-3 lg:px-6'>
-        <Link to='/'>
+        <Link
+          to='/'
+          role='link'
+          aria-label='Isaiah Abiodun | Software Engineer'
+        >
           <div className='inline-flex items-center space-x-2'>
             <div className='flex h-5 w-5 items-center justify-center rounded-full bg-white md:h-8 md:w-8'>
               <div className='flex h-3.5 w-3.5 items-center justify-center rounded-full border border-black md:h-6 md:w-6'>
@@ -41,13 +45,29 @@ export const Header: React.FC = () => {
         <nav role='navigation'>
           <MobileMenu onClick={handleMobileMenu} />
           <ul className='hidden items-center md:flex md:space-x-3 lg:space-x-5'>
-            <li className='relative text-nowrap pb-2 font-primary text-white transition-all before:absolute before:bottom-0 before:right-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'>
-              <Link to='about' className='text-nowrap text-lg'>
+            <li
+              role='listitem'
+              className='relative text-nowrap pb-2 font-primary text-white transition-all before:absolute before:bottom-0 before:right-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'
+            >
+              <Link
+                to='about'
+                className='text-nowrap text-lg'
+                role='link'
+                aria-label='About Me | Isaiah Abiodun'
+              >
                 About Me
               </Link>
             </li>
-            <li className='relative text-nowrap pb-2 font-primary text-white transition-all before:absolute before:bottom-0 before:right-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'>
-              <Link to='portfolio' className='text-lg'>
+            <li
+              role='listitem'
+              className='relative text-nowrap pb-2 font-primary text-white transition-all before:absolute before:bottom-0 before:right-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'
+            >
+              <Link
+                to='portfolio'
+                className='text-lg'
+                role='link'
+                aria-label='Portfolio | Isaiah Abiodun'
+              >
                 Portfolio
               </Link>
             </li>
@@ -75,10 +95,11 @@ export const Header: React.FC = () => {
               className='relative  z-50 flex h-40 w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'
               style={{ zIndex: 1000 }}
               variants={variantsUl}
+              role='list'
             >
               <motion.li
                 className='font-primary text-lg text-white'
-                role='button'
+                role='listitem'
                 onClick={handleMobileMenu}
                 variants={variantsLi}
                 whileHover={{ scale: 1.1 }}
@@ -88,7 +109,7 @@ export const Header: React.FC = () => {
               </motion.li>
               <motion.li
                 className='font-primary text-lg text-white'
-                role='button'
+                role='listitem'
                 onClick={handleMobileMenu}
                 variants={variantsLi}
                 whileHover={{ scale: 1.1 }}
