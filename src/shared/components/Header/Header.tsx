@@ -23,6 +23,52 @@ export const Header: React.FC = () => {
 
   return (
     <>
+      {openMobileMenu && typeof width === 'number' && width < 764 ? (
+        <motion.nav
+          initial={options.initial}
+          animate={options.animate}
+          transition={{
+            ease: 'easeInOut',
+            duration: 1,
+          }}
+          role='navigation'
+          tabIndex={1}
+          className='mobile-navigation menu fixed inset-0 right-0 top-[5%]  z-50 mx-auto mt-2 w-full p-4'
+        >
+          <div
+            aria-hidden='true'
+            className='backdrop-saturate-500 fixed inset-0  z-10 cursor-text bg-white/10 bg-opacity-75 backdrop-blur-sm transition-opacity'
+            onClick={handleMobileMenu}
+          ></div>
+          <motion.ul
+            className='relative  z-50 flex h-40 w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'
+            style={{ zIndex: 1000 }}
+            variants={variantsUl}
+            role='list'
+          >
+            <motion.li
+              className='font-primary text-lg text-white'
+              role='listitem'
+              onClick={handleMobileMenu}
+              variants={variantsLi}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to='about'>About Me</Link>
+            </motion.li>
+            <motion.li
+              className='font-primary text-lg text-white'
+              role='listitem'
+              onClick={handleMobileMenu}
+              variants={variantsLi}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to='portfolio'>Portfolio</Link>
+            </motion.li>
+          </motion.ul>
+        </motion.nav>
+      ) : null}
       <header className='sticky top-0 flex w-full items-center justify-between p-4 py-3 md:px-5 md:py-3 lg:px-6'>
         <Link
           to='/'
@@ -74,52 +120,6 @@ export const Header: React.FC = () => {
             <LetsChat />
           </ul>
         </nav>
-        {openMobileMenu && typeof width === 'number' && width < 764 ? (
-          <motion.nav
-            initial={options.initial}
-            animate={options.animate}
-            transition={{
-              ease: 'easeInOut',
-              duration: 1,
-            }}
-            role='navigation'
-            tabIndex={-1}
-            className='mobile-navigation menu fixed inset-0 right-0 top-[5%]  mx-auto mt-2 w-full p-4'
-          >
-            <div
-              aria-hidden='true'
-              className='fixed inset-0 cursor-text bg-opacity-75 blur-3xl transition-opacity'
-              onClick={handleMobileMenu}
-            ></div>
-            <motion.ul
-              className='relative  z-50 flex h-40 w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'
-              style={{ zIndex: 1000 }}
-              variants={variantsUl}
-              role='list'
-            >
-              <motion.li
-                className='font-primary text-lg text-white'
-                role='listitem'
-                onClick={handleMobileMenu}
-                variants={variantsLi}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to='about'>About Me</Link>
-              </motion.li>
-              <motion.li
-                className='font-primary text-lg text-white'
-                role='listitem'
-                onClick={handleMobileMenu}
-                variants={variantsLi}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to='portfolio'>Portfolio</Link>
-              </motion.li>
-            </motion.ul>
-          </motion.nav>
-        ) : null}
       </header>
     </>
   );
