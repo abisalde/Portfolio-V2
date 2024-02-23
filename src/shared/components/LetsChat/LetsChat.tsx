@@ -11,7 +11,7 @@ export const LetsChat = ({ displayImage = false }: LetsChatProps) => {
         <img
           width='56'
           height='56'
-          src='image/isaiah-abiodun@abisalde.webp'
+          src='image/isaiah-abiodun@abisalde56x56.webp'
           alt='Isaiah Abiodun ::: Thumbnail Portfolio'
           className='border-w h-14 w-14 rounded-full border-white'
         />
