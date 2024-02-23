@@ -13,6 +13,9 @@ export const LoadingAnimation = ({
 
   return (
     <div
+      aria-hidden={true}
+      role='spinbutton'
+      aria-label='Spinner'
       className={`loading_animation ${sizeClassName} border-whites relative box-border inline-block animate-spin rounded-full border-4`}
     ></div>
   );

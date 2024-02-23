@@ -33,6 +33,8 @@ export const PortfolioPage = () => {
               </div>
             )}
             <iframe
+              role='application'
+              aria-label='Expo Snack'
               className='inline h-full w-full'
               data-snack-iframe='true'
               width='100%'
