@@ -116,8 +116,8 @@ img.project-image {
 div.loading_animation {
   animation: loading-animation 5s linear infinite;
   border-radius: 35%;
-  width: 6rem;
-  height: 6rem;
+  width: 7rem;
+  height: 7rem;
 }
 
 div.loading_animation::after {
@@ -131,6 +131,26 @@ div.loading_animation::after {
   border-radius: 50%;
   border: 6px solid;
   border-color: #505960 transparent;
+}
+
+div.loading_animation.small {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+div.loading_animation.small::after {
+  width: 7rem;
+  height: 7rem;
+}
+
+div.loading_animation.large {
+  width: 10rem;
+  height: 10rem;
+}
+
+div.loading_animation.large::after {
+  width: 15rem;
+  height: 15rem;
 }
 
 @keyframes loading-animation {
