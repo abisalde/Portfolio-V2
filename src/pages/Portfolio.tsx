@@ -60,7 +60,7 @@ const ArrayPortfolio = [
     description: 'GitHub profile compiled with github graphql v2 API',
     techList: 'react - gatsby - graphql - styled components',
     githubLink: 'https://github.com/abisalde/afrihealth-github-challenge',
-    liveLink: 'https://abisalde-graphql-profile.netlify.app/',
+    liveLink: 'https://githubgraphql.abisalde.dev/',
     title: 'GitHub Profile Preview',
   },
   {
@@ -79,7 +79,7 @@ const ArrayPortfolio = [
       'A book shelf to log, track and search for book you intend to read, currently reading, and have read',
     techList: 'react.js - react-router-dom',
     githubLink: 'https://github.com/abisalde/reactnd-myreads',
-    liveLink: 'https://reactnd-abisalde-myreads.netlify.app/',
+    liveLink: 'https://myreads.abisalde.dev/',
     title: 'My Read',
   },
   {
