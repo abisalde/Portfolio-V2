@@ -1,13 +1,22 @@
+import * as React from 'react';
+
 import { motion } from 'framer-motion';
 
 /**
  *
  * ? Local & Shared Imports
  */
+import { LoadingAnimation } from '@portfolio-components/LoadingAnimation';
 import { PortfolioCard } from '@portfolio-components/PortfolioCard';
 import { SEO } from '@portfolio-components/SEO';
 
 export const PortfolioPage = () => {
+  const [isLoading, setIsLoading] = React.useState<boolean>(true);
+
+  const onLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <section className='flex h-full flex-col space-y-4 overflow-hidden px-4 md:space-y-7 md:px-12'>
       <SEO pathname='portfolio' title='My Work | Isaiah Abiodun Portfolio' />
@@ -15,15 +24,26 @@ export const PortfolioPage = () => {
         Portfolio.
       </h2>
       <div></div>
-      <div className='portfolio-scroll relative flex w-full flex-col overflow-y-auto px-4 pb-10 pt-6'>
-        <motion.div className='grid grid-flow-row grid-cols-1 justify-center gap-9 lg:grid-cols-2'>
-          <div
-            className='h-[inherit] overflow-hidden rounded-xl shadow-neu3 hover:shadow-neu2 focus:shadow-neu2'
-            data-snack-id='@abisalde/customswitchreactnative'
-            data-snack-platform='web'
-            data-snack-preview='true'
-            data-snack-theme='dark'
-          ></div>
+      <div className='portfolio-scroll flex w-full flex-col overflow-y-auto px-4 pb-10 pt-6'>
+        <motion.div className='relative grid grid-flow-row grid-cols-1 justify-center gap-9 lg:grid-cols-2'>
+          <div className='relative flex h-[inherit] w-full overflow-hidden rounded-xl  shadow-neu3  hover:shadow-neu2 focus:shadow-neu2'>
+            {isLoading && (
+              <div className='absolute left-1/2 top-1/2 -translate-x-1/2'>
+                <LoadingAnimation variants='small' />
+              </div>
+            )}
+            <iframe
+              role='application'
+              aria-label='Expo Snack'
+              className='inline h-full w-full'
+              data-snack-iframe='true'
+              width='100%'
+              height='100%'
+              loading='lazy'
+              onLoad={onLoad}
+              src='https://snack.expo.dev/embedded/@abisalde/customswitchreactnative?iframeId=281llpd3zh&preview=true&platform=web&theme=dark'
+            />
+          </div>
           {ArrayPortfolio.map((portfolio) => (
             <PortfolioCard key={portfolio.id} {...portfolio} />
           ))}

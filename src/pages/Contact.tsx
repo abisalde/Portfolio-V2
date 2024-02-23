@@ -23,7 +23,7 @@ export const ContactPage = () => {
     <section className='relative flex h-full w-full flex-col'>
       {isLoading ? (
         <div className='flex h-full w-full items-center justify-center'>
-          <LoadingAnimation />
+          <LoadingAnimation variants='large' />
         </div>
       ) : (
         <CalendlySchedule />
