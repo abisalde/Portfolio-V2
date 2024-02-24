@@ -32,7 +32,10 @@ import { SEO } from '@portfolio-components/SEO';
 export const AboutPage = () => {
   return (
     <section className='flex h-full flex-col space-y-4 px-5 md:space-y-6 md:px-12'>
-      <SEO pathname='about' title='About Me ::: Isaiah Abiodun | Portfolio' />
+      <SEO
+        pathname='about'
+        title='About Me ::: Isaiah Abiodun | Software Engineer'
+      />
       <h2 className='text-center font-primary text-2xl font-medium text-white md:text-5xl'>
         About Me.
       </h2>

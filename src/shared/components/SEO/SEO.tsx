@@ -34,7 +34,7 @@ export const SEO: React.FC<SEOProps> = ({
 };
 
 const metaDescription =
-  'I am Software Engineer with focus on frontend development building scalable, readable, maintainable pixel perfect UI both on mobile and web applications';
+  'I am Software Engineer with focus on frontend development building scalable, readable, maintainable pixel perfect UI on mobile and web applications';
 
 interface Favicons {
   rel: string;
