@@ -64,6 +64,16 @@ const ArrayPortfolio = [
     title: 'GitHub Profile Preview',
   },
   {
+    id: 'portfolio--githu-021',
+    image: 'image/copy&paste-editor.png',
+    description:
+      'Copy & Paste editor using draft.js from meta. Also you can copy and paste an image into this editor',
+    techList: 'react.js - next.js - tailwind-css - draft.js',
+    githubLink: 'https://github.com/abisalde/mateo-challenge',
+    liveLink: 'https://copy-paste-draftjs.vercel.app/',
+    title: 'Copy & Paste Editor',
+  },
+  {
     id: 'portfolio-ear1-challenge',
     image: 'image/ear1-challenge.png',
     description: 'A social media app to connect to influencer and celebrity',
@@ -87,7 +97,7 @@ const ArrayPortfolio = [
     image: 'image/wouldyourather.png',
     description:
       'A poll question app where you get to post a question on what you would rather do, answer the questions some users also post and it also includes a Leader board',
-    techList: 'react - bootstrap - redux-toolkit - redux-thunk',
+    techList: 'react.js - bootstrap - redux-toolkit - redux-thunk',
     githubLink: 'https://github.com/abisalde/reactnd-would-you-rather',
     liveLink: 'https://abisalde-wyr.vercel.app/',
     title: 'Would You Rather',
