@@ -12,7 +12,9 @@ export const SEO: React.FC<SEOProps> = ({
   pathname = '',
   title,
 }) => {
-  const siteTitle = title ?? 'Abisalde ::: Portfolio';
+  const siteTitle =
+    title ??
+    'Isaiah Abiodun | Software Engineer with adeptness on front-end development';
   return (
     <Helmet>
       <title>{siteTitle}</title>
@@ -23,8 +25,7 @@ export const SEO: React.FC<SEOProps> = ({
       <meta property='og:site_name' content={siteTitle} />
       <meta property='og:description' content={metaDescription} />
       <meta property='og:title' content={siteTitle} />
-      <meta name='twitter:image' content='https://i.imgur.com/gH5efIX.png' />
-      <meta name='theme-color' content='#FEFBEA' />
+      <meta name='theme-color' content='#141414' />
       <meta name='msapplication-TileColor' content='#ffffff' />
       {favicons.map((links) => (
         <link key={links.href} {...links} />
