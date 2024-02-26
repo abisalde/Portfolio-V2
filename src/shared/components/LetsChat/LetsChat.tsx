@@ -19,7 +19,7 @@ export const LetsChat = ({ displayImage = false }: LetsChatProps) => {
       <Link to='/lets-chat' relative='path'>
         <button
           type='button'
-          className='say-hello text w-full max-w-40 cursor-pointer whitespace-nowrap  text-nowrap rounded-xl border-0  border-solid px-5 py-1.5 text-2xl font-medium tracking-wider text-white outline  outline-2 outline-offset-0 outline-white ring-0 hover:text-nowrap hover:border-2 hover:border-solid hover:stroke-indigo-300 hover:outline-offset-[15px] hover:outline-dark'
+          className='say-hello text max-w-46 w-full cursor-pointer whitespace-nowrap  text-nowrap rounded-xl border-0  border-solid px-8 py-2 text-2xl font-medium tracking-wider text-white outline  outline-2 outline-offset-0 outline-white ring-0 hover:text-nowrap hover:border-2 hover:border-solid hover:stroke-indigo-300 hover:outline-offset-[15px] hover:outline-dark'
         >
           Let's Chat
         </button>
