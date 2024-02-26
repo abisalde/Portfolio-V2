@@ -26,7 +26,7 @@ export const PortfolioPage = () => {
       <div></div>
       <div className='portfolio-scroll flex w-full flex-col overflow-y-auto px-4 pb-10 pt-6'>
         <motion.div className='relative grid grid-flow-row grid-cols-1 justify-center gap-9 lg:grid-cols-2'>
-          <div className='relative flex h-[inherit] w-full overflow-hidden rounded-xl  shadow-neu3  hover:shadow-neu2 focus:shadow-neu2'>
+          <div className='relative flex h-64 w-full overflow-hidden rounded-xl shadow-neu3  hover:shadow-neu2  focus:shadow-neu2 md:h-[inherit]'>
             {isLoading && (
               <div className='absolute left-1/2 top-1/2 -translate-x-1/2'>
                 <LoadingAnimation variants='small' />
