@@ -25,7 +25,7 @@ export const HomePage = () => {
       </div>
       <div className='flex w-full flex-wrap items-center justify-start md:w-3/5 lg:w-[40%]'>
         <h5 className='font-light text-white md:text-2xl'>
-          Adeptness on{' '}
+          Adeptness in{' '}
           <span className='text-slate-400'>front-end development</span>,
           crafting compelling user experience based on{' '}
           <span className='text-slate-400'>
