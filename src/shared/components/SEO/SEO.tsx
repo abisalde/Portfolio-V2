@@ -14,7 +14,7 @@ export const SEO: React.FC<SEOProps> = ({
 }) => {
   const siteTitle =
     title ??
-    'Isaiah Abiodun | Software Engineer with adeptness on front-end development';
+    'Isaiah Abiodun | Software Engineer with adeptness in front-end development';
   return (
     <Helmet>
       <title>{siteTitle}</title>
