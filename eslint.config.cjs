@@ -1,53 +1,60 @@
-const {
-    defineConfig,
-    globalIgnores,
-} = require("eslint/config");
+const { defineConfig, globalIgnores } = require('eslint/config');
 
-const globals = require("globals");
+const globals = require('globals');
 
-const {
-    fixupConfigRules,
-} = require("@eslint/compat");
+const { fixupConfigRules } = require('@eslint/compat');
 
-const tsParser = require("@typescript-eslint/parser");
-const reactRefresh = require("eslint-plugin-react-refresh");
-const prettier = require("eslint-plugin-prettier");
-const js = require("@eslint/js");
+const tsParser = require('@typescript-eslint/parser');
+const reactRefresh = require('eslint-plugin-react-refresh');
+const prettier = require('eslint-plugin-prettier');
+const js = require('@eslint/js');
 
-const {
-    FlatCompat,
-} = require("@eslint/eslintrc");
+const { FlatCompat } = require('@eslint/eslintrc');
 
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
-module.exports = defineConfig([{
+module.exports = defineConfig([
+  {
     languageOptions: {
-        globals: {
-            ...globals.browser,
-        },
+      globals: {
+        ...globals.browser,
+      },
 
-        parser: tsParser,
+      parser: tsParser,
     },
 
-    extends: fixupConfigRules(compat.extends(
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react-hooks/recommended",
-        "eslint-config-prettier",
-    )),
+    extends: fixupConfigRules(
+      compat.extends(
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react-hooks/recommended',
+        'eslint-config-prettier',
+      ),
+    ),
 
     plugins: {
-        "react-refresh": reactRefresh,
-        prettier,
+      'react-refresh': reactRefresh,
+      prettier,
     },
 
     rules: {
-        "react-refresh/only-export-components": ["warn", {
-            allowConstantExport: true,
-        }],
+      'prettier/prettier': 'warn',
     },
-}, globalIgnores(["**/dist", "**/.eslintrc.cjs"])]);
+  },
+  {
+    files: ['**/*.cjs'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
+  },
+  globalIgnores(['**/dist', '**/node_modules']),
+]);

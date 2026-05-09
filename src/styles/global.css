@@ -1,6 +1,50 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  /* Custom colors */
+  --color-dark: #141414;
+
+  /* Custom font families */
+  --font-primary: 'Lato', system-ui, sans-serif;
+  --font-secondary: Alexana, Georgia, serif;
+  --font-display: 'Rubik Dirt Display', cursive;
+  --font-cyber-normal: 'Punk Cyber Extrude', system-ui, sans-serif;
+  --font-cyber-outline: 'Punk Cyber Outline', Arial, sans-serif;
+  --font-cyber-regular: 'Punk Cyber Regular', sans-serif;
+
+  /* Custom font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-tiny: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 4rem;
+  --text-7xl: 5rem;
+
+  /* Custom box shadows */
+  --shadow-neu1: inset 0.2em 0.2em 0.4em #54f6d2, inset -0.2em -0.2em 0.4em #fff;
+  --shadow-neu2: 0.2em 0.2em 0.4em #54f6d2, -0.2em -0.2em 0.4em #fff;
+  --shadow-neu3: 0.2em 0.2em 0.4em #ccc, -0.2em -0.2em 0.4em #141414;
+
+  /* Custom breakpoints */
+  --breakpoint-xs: 10px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+
+  /* Custom container sizes */
+  --container-default: 1rem;
+  --container-sm: 1.5rem;
+  --container-lg: 2rem;
+  --container-xl: 3rem;
+  --container-2xl: 3.5rem;
+}
 
 @layer {
   @font-face {
