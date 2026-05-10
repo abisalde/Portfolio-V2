@@ -19,7 +19,7 @@ export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
       </main>
       <footer className='relative flex flex-col justify-center justify-self-end text-center text-white'>
         <Socials />
-        <p className='font-primary text-center text-[14px] font-semibold text-white'>
+        <p className='font-primary text-tiny text-center font-semibold text-white'>
           ©️ {new Date().getFullYear()}
         </p>
       </footer>
