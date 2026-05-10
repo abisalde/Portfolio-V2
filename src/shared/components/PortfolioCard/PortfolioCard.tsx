@@ -25,12 +25,11 @@ export const PortfolioCard = ({
 }: PortfolioCardProps) => {
   return (
     <div className='shadow-neu3 hover:shadow-neu2 focus:shadow-neu2 flex transform-none flex-col rounded-xl md:flex-row'>
-      <div className='flex h-62 w-full justify-center overflow-hidden rounded-t-xl opacity-1 hover:overflow-hidden md:rounded-t-none lg:h-96 lg:w-3/4 lg:rounded-l-xl'>
+      <div className='flex h-62 w-full justify-center overflow-hidden rounded-t-xl md:rounded-t-none lg:h-96 lg:w-3/4 lg:rounded-l-xl'>
         <img
           loading='lazy'
-          height='100%'
           src={image}
-          alt='Project Name'
+          alt={title}
           className='project-image block h-full w-full max-w-none overflow-hidden object-cover object-center hover:scale-105'
         />
       </div>

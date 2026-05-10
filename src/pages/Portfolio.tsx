@@ -83,7 +83,7 @@ const ArrayPortfolio = [
   },
   {
     id: 'portfolio--githu-021',
-    image: '/image/copy%26paste-editor.png',
+    image: 'image/copy&paste-editor.png',
     description:
       'Copy & Paste editor using draft.js from meta. Also you can copy and paste an image into this editor',
     techList: 'react.js - next.js - tailwind-css - draft.js',
