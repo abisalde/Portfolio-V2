@@ -24,19 +24,19 @@ export const PortfolioCard = ({
   title,
 }: PortfolioCardProps) => {
   return (
-    <div className='flex transform-none flex-col rounded-xl shadow-neu3 hover:shadow-neu2 focus:shadow-neu2 md:flex-row'>
-      <div className='opacity-1 h-62 flex w-full justify-center overflow-hidden rounded-t-xl hover:overflow-hidden md:rounded-t-none  lg:h-96 lg:w-3/4 lg:rounded-l-xl'>
+    <div className='shadow-neu3 hover:shadow-neu2 focus:shadow-neu2 flex transform-none flex-col rounded-xl md:flex-row'>
+      <div className='flex h-62 w-full justify-center overflow-hidden rounded-t-xl md:rounded-t-none lg:h-96 lg:w-3/4 lg:rounded-l-xl'>
         <img
           loading='lazy'
           src={image}
-          alt='Project Name'
+          alt={title}
           className='project-image block h-full w-full max-w-none overflow-hidden object-cover object-center hover:scale-105'
         />
       </div>
       <div className='flex flex-col justify-center space-y-4 p-5'>
         <h3 className='text-xl font-bold text-white md:text-2xl'>{title}</h3>
         <p className='text-base font-thin text-white'>{description}</p>
-        <p className='font-medium uppercase text-slate-400'>{techList}</p>
+        <p className='font-medium text-slate-400 uppercase'>{techList}</p>
         <p className='inline-flex space-x-3'>
           <Link to={githubLink} rel='norefferer noopenner'>
             <BiLogoGithub className='text-slate-400' size={35} />

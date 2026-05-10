@@ -36,16 +36,16 @@ export const AboutPage = () => {
         pathname='about'
         title='About Me ::: Isaiah Abiodun | Software Engineer'
       />
-      <h2 className='text-center font-primary text-2xl font-medium text-white md:text-5xl'>
+      <h2 className='font-primary text-center text-2xl font-medium text-white md:text-5xl'>
         About Me.
       </h2>
       <div className='grid h-full w-full grid-cols-1 md:gap-4 lg:grid-cols-2 lg:gap-8'>
-        <div className='flex flex-col  space-y-4 md:space-y-7'>
+        <div className='flex flex-col space-y-4 md:space-y-7'>
           <h3 className='text-2xl font-medium text-white md:text-4xl'>
             Hi, I'm <span className='text-slate-400'>Isaiah Abiodun</span>
           </h3>
           <div className='mt-5'>
-            <h6 className='mb-3 font-primary text-xl text-slate-400 md:text-3xl'>
+            <h6 className='font-primary mb-3 text-xl text-slate-400 md:text-3xl'>
               Who am I &amp; What I do
             </h6>
             <ul className='flex flex-col gap-4'>
@@ -54,7 +54,7 @@ export const AboutPage = () => {
                   <img
                     width={60}
                     height={60}
-                    src='image/code-image.png'
+                    src='/image/code-image.png'
                     className='h-9 w-9 rounded-full ring-0'
                   />
                   <p className='text-sm font-medium text-white md:text-xl'>
@@ -69,7 +69,7 @@ export const AboutPage = () => {
           </div>
         </div>
         <div className='hidden lg:block'>
-          <h5 className='mb-9 text-center text-3xl font-medium  text-white'>
+          <h5 className='mb-9 text-center text-3xl font-medium text-white'>
             Skills & Tools
           </h5>
           <div className='mx-auto grid w-1/2 grid-cols-4 gap-5'>

@@ -33,15 +33,15 @@ export const Header: React.FC = () => {
           }}
           role='navigation'
           tabIndex={1}
-          className='mobile-navigation menu fixed inset-0 right-0 top-[5%]  z-50 mx-auto mt-2 w-full p-4'
+          className='mobile-navigation menu fixed inset-0 top-[5%] right-0 z-50 mx-auto mt-2 w-full p-4'
         >
           <div
             aria-hidden='true'
-            className='backdrop-saturate-500 fixed inset-0  z-10 cursor-text bg-white/10 bg-opacity-75 backdrop-blur-sm transition-opacity'
+            className='bg-opacity/75 fixed inset-0 z-10 cursor-text bg-white/10 backdrop-blur-sm backdrop-saturate-500 transition-opacity'
             onClick={handleMobileMenu}
           ></div>
           <motion.ul
-            className='relative  z-50 flex h-40 w-full flex-col items-center justify-center space-y-6 rounded-2xl bg-dark py-7'
+            className='bg-dark relative z-50 flex h-40 w-full flex-col items-center justify-center space-y-6 rounded-2xl py-7'
             style={{ zIndex: 1000 }}
             variants={variantsUl}
             role='list'
@@ -78,7 +78,7 @@ export const Header: React.FC = () => {
           <div className='inline-flex items-center space-x-2'>
             <div className='flex h-5 w-5 items-center justify-center rounded-full bg-white md:h-8 md:w-8'>
               <div className='flex h-3.5 w-3.5 items-center justify-center rounded-full border border-black md:h-6 md:w-6'>
-                <p className='text-center font-cyber-normal text-[10px] uppercase text-black md:text-base'>
+                <p className='font-cyber-normal text-center text-[10px] text-black uppercase md:text-base'>
                   a
                 </p>
               </div>
@@ -93,11 +93,11 @@ export const Header: React.FC = () => {
           <ul className='hidden items-center md:flex md:space-x-3 lg:space-x-5'>
             <li
               role='listitem'
-              className='relative text-nowrap pb-2 font-primary text-white transition-all before:absolute before:bottom-0 before:right-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'
+              className='font-primary relative pb-2 text-nowrap text-white transition-all before:absolute before:right-0 before:bottom-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'
             >
               <Link
                 to='about'
-                className='text-nowrap text-lg'
+                className='text-lg text-nowrap'
                 role='link'
                 aria-label='About Me | Isaiah Abiodun'
               >
@@ -106,7 +106,7 @@ export const Header: React.FC = () => {
             </li>
             <li
               role='listitem'
-              className='relative text-nowrap pb-2 font-primary text-white transition-all before:absolute before:bottom-0 before:right-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'
+              className='font-primary relative pb-2 text-nowrap text-white transition-all before:absolute before:right-0 before:bottom-0 before:h-1 before:w-0 before:bg-slate-400 before:transition-all before:duration-500 hover:before:left-0 hover:before:w-full hover:before:bg-purple-500'
             >
               <Link
                 to='portfolio'
@@ -133,7 +133,7 @@ const MobileMenu = ({ onClick }: MobileMenuProps) => {
   return (
     <button
       onClick={onClick}
-      className='backdrop-saturate-500 flex h-11 w-11 items-center justify-center rounded-full bg-white/30 shadow-white backdrop-blur-sm md:hidden'
+      className='flex h-11 w-11 items-center justify-center rounded-full bg-white/30 shadow-white backdrop-blur-sm backdrop-saturate-500 md:hidden'
       role='button'
       aria-label='Click to open mobile menu'
     >

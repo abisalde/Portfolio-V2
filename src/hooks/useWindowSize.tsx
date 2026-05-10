@@ -7,8 +7,8 @@ type windowSize = {
 
 export const useWindowSize = (): windowSize => {
   const [windowSize, setWindowSize] = useState<windowSize>({
-    width: undefined,
-    height: undefined,
+    width: typeof window !== 'undefined' ? window.innerWidth : undefined,
+    height: typeof window !== 'undefined' ? window.innerHeight : undefined,
   });
   const handleWindowResize = useCallback(() => {
     setWindowSize({
@@ -25,7 +25,6 @@ export const useWindowSize = (): windowSize => {
 
   useEffect(() => {
     heightUpdate();
-    handleWindowResize();
     window.addEventListener('resize', heightUpdate);
     window.addEventListener('resize', handleWindowResize);
     return () => {

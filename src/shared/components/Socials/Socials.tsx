@@ -17,7 +17,7 @@ export const Socials: React.FC = () => {
         aria-hidden={true}
         aria-label='X (Twitter) Profile'
         aria-roledescription='Twitter Profile Page'
-        className='grid h-9 w-9 cursor-pointer place-items-center rounded-full outline outline-2 outline-white transition-all duration-300 hover:bg-dark hover:outline-offset-2 hover:transition-all hover:duration-300 md:h-11 md:w-11'
+        className='hover:bg-dark grid h-9 w-9 cursor-pointer place-items-center rounded-full outline outline-2 outline-white transition-all duration-300 hover:outline-offset-2 hover:transition-all hover:duration-300 md:h-11 md:w-11'
       >
         <BsTwitterX fontSize={22} className='scale-100' />
       </a>
