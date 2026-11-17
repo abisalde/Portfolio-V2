@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 
 export function useActiveSection(sectionIds: readonly string[]) {
+  const { pathname } = useLocation();
   const [activeId, setActiveId] = useState(sectionIds[0]);
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export function useActiveSection(sectionIds: readonly string[]) {
       if (section) observer.observe(section);
     }
     return () => observer.disconnect();
-  }, [sectionIds]);
+  }, [sectionIds, pathname]);
 
   return activeId;
 }
