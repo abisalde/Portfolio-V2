@@ -2,6 +2,7 @@ import { HomePage, NotFoundPage } from '@/pages';
 import { Layout } from '@/shared/components/Layout';
 
 import { ROUTE } from '.';
+import { loadPageOrReload } from './loadPageOrReload';
 
 export const routes = [
   {
@@ -13,9 +14,13 @@ export const routes = [
       { path: ROUTE.about_page, element: <HomePage section='about' /> },
       {
         path: ROUTE.lets_chat,
-        lazy: async () => ({
-          Component: (await import('@/pages/LetsChat')).LetsChatPage,
-        }),
+        lazy: async () => {
+          const { LetsChatPage } = await loadPageOrReload(
+            ROUTE.lets_chat,
+            () => import('@/pages/LetsChat'),
+          );
+          return { Component: LetsChatPage };
+        },
       },
       { path: '*', element: <NotFoundPage /> },
     ],
