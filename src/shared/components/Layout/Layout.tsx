@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router';
 
 import { InspectProvider } from '@/hooks/InspectProvider';
 import { useActiveSection } from '@/hooks/useActiveSection';
+import { useScrollOnNavigation } from '@/hooks/useScrollOnNavigation';
 import { HOME_SECTIONS, ROUTE } from '@/routes';
 
 import { Footer } from '../Footer';
@@ -19,6 +20,7 @@ const HOME_PATHS: readonly string[] = [
 export function Layout() {
   const { pathname } = useLocation();
   const activeSection = useActiveSection(HOME_SECTIONS);
+  useScrollOnNavigation();
   const activeId = HOME_PATHS.includes(pathname) ? activeSection : undefined;
 
   return (

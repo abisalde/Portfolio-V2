@@ -25,6 +25,7 @@ Element.prototype.animate = vi.fn(
   () => ({ cancel: vi.fn() }) as unknown as Animation,
 );
 Element.prototype.scrollIntoView = vi.fn();
+window.scrollTo = vi.fn();
 
 afterEach(() => {
   cleanup();
