@@ -1,5 +1,3 @@
-export * from './About';
-export * from './NotFound';
+export * from './ErrorPage';
 export * from './Home';
-export * from './Portfolio';
-export * from './Contact';
+export * from './NotFound';

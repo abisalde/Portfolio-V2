@@ -1,38 +1,23 @@
 {
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
-
-    /* Linting */
+    "types": ["vite/client"],
     "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    "baseUrl": "src",
     "paths": {
-      "@portfolio-components/*": ["./shared/components/*"],
-      "@utils/*": ["./utils/"],
-      "@assets/*": ["./assets/*"],
-      "@hooks": ["./hooks/"],
-      "@styles/*": ["./styles/*"],
-      "@helpers": ["./helpers/index"],
-      "@pages": ["./pages/index"],
-      "@routes": ["./routes/index"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "vite.config.ts", "eslint.config.js"]
 }

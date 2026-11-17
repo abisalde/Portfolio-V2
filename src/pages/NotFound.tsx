@@ -1,22 +1,23 @@
-/**
- *
- * ? Local & Shared Imports
- */
-import { Layout } from '@portfolio-components/Layout';
-import { SEO } from '@portfolio-components/SEO';
-
-export const NotFoundPage = () => {
+export function NotFoundPage() {
   return (
-    <Layout>
-      <SEO pathname='*' title='404 ::: Isaiah Abiodun | Portfolio' />
-      <div className='flex h-full w-full flex-col items-center justify-center px-4'>
-        <h2 className='font-display text-[5rem] text-slate-400 md:text-[15rem] lg:text-[25rem]'>
-          4 0 4
-        </h2>
-        <p className='font-secondary text-5xl text-slate-400 md:text-[6rem] lg:text-[8rem]'>
-          Oh dear. Are you lost?
-        </p>
-      </div>
-    </Layout>
+    <section className='flex min-h-[70dvh] flex-col justify-center px-4 py-16 md:px-10'>
+      <title>404 | Isaiah Abiodun</title>
+      <meta name='robots' content='noindex' />
+      <p
+        aria-hidden='true'
+        className='text-[clamp(8rem,30vw,24rem)] leading-[0.8] font-black condensed'
+      >
+        404<span className='text-teal'>.</span>
+      </p>
+      <h1 className='mt-6 font-serif text-4xl italic md:text-6xl'>
+        Oh dear. Are you lost?
+      </h1>
+      <a
+        href='/'
+        className='mt-8 inline-flex min-h-11 items-center font-semibold underline underline-offset-4'
+      >
+        Back to the home page
+      </a>
+    </section>
   );
-};
+}

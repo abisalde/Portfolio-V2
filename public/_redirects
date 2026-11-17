@@ -1,1 +1,5 @@
- /*  /index.html  200
+/assets/*    /index.html  404
+/about       /index.html  200
+/portfolio   /index.html  200
+/lets-chat   /index.html  200
+/*           /index.html  404

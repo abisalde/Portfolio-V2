@@ -1,30 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+@import 'tailwindcss';
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import '@fontsource-variable/jetbrains-mono/index.css';
 
-:root {
-  --app-height: 100%;
-  user-select: none;
+@theme {
+  --color-paper: #f4f3ee;
+  --color-surface: #ffffff;
+  --color-ink: #141414;
+  --color-ink-raised: #1f1f1d;
+  --color-muted: #5b5b57;
+  --color-line: #d9d7cf;
+  --color-mint: #54f6d2;
+  --color-teal: #0b7a66;
+  --color-inspect: #1a73e8;
+  --color-on-ink-muted: #a3a39c;
+  --color-on-ink-line: #2f2f2c;
+  --color-box-margin: #f6b26b;
+  --color-box-padding: #93c47d;
+  --color-box-content: #6fa8dc;
+  --color-mint-bright: #7af8dc;
+  --color-inspect-soft: #e8f0fe;
+  --color-css-property: #b3261e;
+  --color-devtools: #202124;
+  --color-devtools-tag: #f28b82;
+  --color-devtools-class: #8ab4f8;
+  --color-devtools-size: #bdc1c6;
+  --color-phone-screen: #f2f2f4;
+  --color-phone-muted: #6b6b70;
+  --color-phone-text: #3a3a3f;
+
+  --font-sans: 'Archivo Variable', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --spacing-rail: 14.5rem;
+  --spacing-tabbar: 4.5rem;
 }
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
-  border: 0 solid #e2e8f0;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  section[id] {
+    scroll-margin-top: 1rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-mint);
+    color: var(--color-ink);
+  }
 }
 
-html {
-  height: 100%;
-  scroll-behaviour: smooth;
+@utility condensed {
+  font-stretch: 62%;
 }
 
-div.main-app {
-  height: 100vh;
-  height: var(--app-height);
-  backface-visibility: visible;
-  overflow: hidden;
-  background-size: cover;
-  transition: background-image 0.4s ease-in-out;
-  background-repeat: no-repeat;
-  font-family: 'Lato';
+@utility semi-condensed {
+  font-stretch: 85%;
 }
