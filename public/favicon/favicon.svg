@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="96 98 1060 1060" width="512" height="512">
+  <defs>
+    <linearGradient id="right-fold" x1="697" y1="346" x2="764" y2="626" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#249f88"/>
+      <stop offset=".25" stop-color="#42dbba"/>
+      <stop offset=".55" stop-color="#54f6d2"/>
+      <stop offset="1" stop-color="#42d8b8"/>
+    </linearGradient>
+    <linearGradient id="lower-fold" x1="821" y1="724" x2="867" y2="852" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#259f88"/>
+      <stop offset=".55" stop-color="#44dfbe"/>
+      <stop offset="1" stop-color="#54f6d2"/>
+    </linearGradient>
+    <linearGradient id="crossbar" x1="420" y1="809" x2="861" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#32b69b"/>
+      <stop offset=".25" stop-color="#49e9c7"/>
+      <stop offset=".7" stop-color="#54f6d2"/>
+      <stop offset="1" stop-color="#4aebc8"/>
+    </linearGradient>
+  </defs>
+  <rect x="96" y="98" width="1060" height="1060" rx="142" fill="#141414"/>
+  <path d="M626 330C667 308 697 306 720 347L1021 976H894L626 405L604 357Z" fill="#54f6d2"/>
+  <path d="M626 405C647 349 678 326 720 347L892 725C849 667 790 640 736 635Z" fill="url(#right-fold)"/>
+  <path d="M766 728C825 728 878 763 937 817L974 894L894 976Z" fill="url(#lower-fold)"/>
+  <path d="M472 718C573 665 664 635 736 635C809 635 858 665 892 725L937 817C878 763 825 728 766 728C668 729 541 785 401 859Z" fill="url(#crossbar)"/>
+  <path d="M231 976L524 354C546 306 584 280 626 280C669 280 700 305 720 347L741 391C692 327 655 337 626 405L346 976Z" fill="#54f6d2"/>
+</svg>

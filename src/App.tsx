@@ -1,41 +1,10 @@
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
-} from 'react-router-dom';
-/**
- * ? Local & Shared Import
- */
-import { Layout } from '@portfolio-components/Layout';
+import { createBrowserRouter } from 'react-router';
+import { RouterProvider } from 'react-router/dom';
 
-import {
-  AboutPage,
-  HomePage,
-  ContactPage,
-  NotFoundPage,
-  PortfolioPage,
-} from '@pages';
+import { routes } from '@/routes/routes';
 
-import { ROUTE } from '@routes';
-import { useWindowSize } from '@hooks';
+const router = createBrowserRouter(routes);
 
-import '@styles/global.css';
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route element={<Layout />} errorElement={<NotFoundPage />}>
-      <Route index element={<HomePage />} path={ROUTE.home_page} />
-      <Route element={<AboutPage />} path={ROUTE.about_page} />
-      <Route element={<PortfolioPage />} path={ROUTE.portfolio_page} />
-      <Route element={<ContactPage />} path={ROUTE.lets_chat} />
-    </Route>,
-  ),
-);
-
-function App() {
-  useWindowSize();
+export function App() {
   return <RouterProvider router={router} />;
 }
-
-export default App;
