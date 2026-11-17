@@ -1,4 +1,4 @@
-import { HomePage, NotFoundPage } from '@/pages';
+import { ErrorPage, HomePage, NotFoundPage } from '@/pages';
 import { Layout } from '@/shared/components/Layout';
 
 import { ROUTE } from '.';
@@ -7,7 +7,7 @@ import { loadPageOrReload } from './loadPageOrReload';
 export const routes = [
   {
     element: <Layout />,
-    errorElement: <NotFoundPage />,
+    errorElement: <ErrorPage />,
     children: [
       { path: ROUTE.home_page, element: <HomePage /> },
       { path: ROUTE.portfolio_page, element: <HomePage section='work' /> },
